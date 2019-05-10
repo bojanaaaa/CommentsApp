@@ -14,6 +14,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) IBOutlet UILabel *commentsAppLabel;
 
+@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
+
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
+@property (strong, nonatomic) IBOutlet UITextField *confirmedPasswordTextField;
+
+@property (strong, nonatomic) IBOutlet UILabel *somethingWentWrongLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *logInLabel;
+
+- (IBAction)signUpButton:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *logInButton;
+
 
 @end
 

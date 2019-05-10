@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SplashScreenViewController : MainViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *commentsAppLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END

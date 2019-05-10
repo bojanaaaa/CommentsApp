@@ -13,11 +13,11 @@
 @end
 
 @implementation SplashScreenViewController
-
+@synthesize commentsAppLabel;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
+    [commentsAppLabel setTransform:CGAffineTransformMakeRotation(M_PI / 2)];}
 
 /*
 #pragma mark - Navigation
