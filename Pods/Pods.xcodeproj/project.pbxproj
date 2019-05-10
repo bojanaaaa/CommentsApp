@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B68E985DE4ECFA89E1B68091FF1731B0 /* Pods-CommentsAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC95FC96A88E4BEFB526D4CE9E996581 /* Pods-CommentsAppTests-dummy.m */; };
+		EA59394DE07AF438B17CE6B935E23FE5 /* Pods-CommentsApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F184098F67DEE4012DA2ED6C5CBBBEEB /* Pods-CommentsApp-dummy.m */; };
+		F9E7E2783311ECE709E6EA42FB5AF262 /* Pods-CommentsAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7495360474A9685A2E5157657FA01FEC /* Pods-CommentsAppUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F43CC338557E655E7ED83493CEA11EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 106C81C64B956BDB6212CACCE5180415;
+			remoteInfo = "Pods-CommentsApp";
+		};
+		9BC3F3B04979313EF5DF18AB7696E0AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 106C81C64B956BDB6212CACCE5180415;
+			remoteInfo = "Pods-CommentsApp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01DB4DDC78CC1B967BC1BD29A4D83773 /* Pods-CommentsAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommentsAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0B172E736700A3B5E4EF83A17DA75FBF /* libPods-CommentsAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CommentsAppUITests.a"; path = "libPods-CommentsAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF2CF24B6F3C4383993A998A7678C7E /* Pods-CommentsApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommentsApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		251D9B5D993B63744E2C102A440F5367 /* Pods-CommentsAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommentsAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		25827FD35C95EDD2368FB8E30F279256 /* Pods-CommentsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommentsAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A75012D0D5C859F55B445C3BD3101F1 /* Pods-CommentsAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommentsAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6F68B32F39862D2DF2F1025DC4BA6950 /* libPods-CommentsAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CommentsAppTests.a"; path = "libPods-CommentsAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7495360474A9685A2E5157657FA01FEC /* Pods-CommentsAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommentsAppUITests-dummy.m"; sourceTree = "<group>"; };
+		8DEBE71C1305B11E5AC4BC0316CA47B0 /* Pods-CommentsAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommentsAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		92336D8592003EB5A307967178A86866 /* Pods-CommentsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommentsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C1D400711E987A5B32D3AAD7EAA37475 /* Pods-CommentsAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommentsAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C53C7C12E55BA215230C62C3ED25750E /* Pods-CommentsAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommentsAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CB1BB2A6F410FA950F5BC68AAD56AF32 /* libPods-CommentsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CommentsApp.a"; path = "libPods-CommentsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCCB1C6D4132620C12E4C1AA5FAFCFC4 /* Pods-CommentsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommentsApp.release.xcconfig"; sourceTree = "<group>"; };
+		CCE3915D9C9C4CCEF2394D46ADABA97A /* Pods-CommentsApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommentsApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D49F2794A5EB9CDB42D34BF17813433C /* Pods-CommentsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommentsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DC95FC96A88E4BEFB526D4CE9E996581 /* Pods-CommentsAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommentsAppTests-dummy.m"; sourceTree = "<group>"; };
+		F184098F67DEE4012DA2ED6C5CBBBEEB /* Pods-CommentsApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommentsApp-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B0316CB304652903290D595D2BFE269 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A90AF4C33FB54E106013ED0099CB48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92C5B752756CC333FBC097E741FFE72F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		069F4DC8CE658F31762FB49E17D3D512 /* Pods-CommentsAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A75012D0D5C859F55B445C3BD3101F1 /* Pods-CommentsAppUITests-acknowledgements.markdown */,
+				C1D400711E987A5B32D3AAD7EAA37475 /* Pods-CommentsAppUITests-acknowledgements.plist */,
+				7495360474A9685A2E5157657FA01FEC /* Pods-CommentsAppUITests-dummy.m */,
+				8DEBE71C1305B11E5AC4BC0316CA47B0 /* Pods-CommentsAppUITests.debug.xcconfig */,
+				251D9B5D993B63744E2C102A440F5367 /* Pods-CommentsAppUITests.release.xcconfig */,
+			);
+			name = "Pods-CommentsAppUITests";
+			path = "Target Support Files/Pods-CommentsAppUITests";
+			sourceTree = "<group>";
+		};
+		164B00A3E71D2FC5A0362C2E596E9A6C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B693D7D99236217AA9F32EA25AC90B82 /* Pods-CommentsApp */,
+				C21593946CBDB576C81432A9EF0D5574 /* Pods-CommentsAppTests */,
+				069F4DC8CE658F31762FB49E17D3D512 /* Pods-CommentsAppUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		290D900AB5E070A98AD6001D9F7C7AEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB1BB2A6F410FA950F5BC68AAD56AF32 /* libPods-CommentsApp.a */,
+				6F68B32F39862D2DF2F1025DC4BA6950 /* libPods-CommentsAppTests.a */,
+				0B172E736700A3B5E4EF83A17DA75FBF /* libPods-CommentsAppUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B693D7D99236217AA9F32EA25AC90B82 /* Pods-CommentsApp */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3915D9C9C4CCEF2394D46ADABA97A /* Pods-CommentsApp-acknowledgements.markdown */,
+				1AF2CF24B6F3C4383993A998A7678C7E /* Pods-CommentsApp-acknowledgements.plist */,
+				F184098F67DEE4012DA2ED6C5CBBBEEB /* Pods-CommentsApp-dummy.m */,
+				D49F2794A5EB9CDB42D34BF17813433C /* Pods-CommentsApp.debug.xcconfig */,
+				CCCB1C6D4132620C12E4C1AA5FAFCFC4 /* Pods-CommentsApp.release.xcconfig */,
+			);
+			name = "Pods-CommentsApp";
+			path = "Target Support Files/Pods-CommentsApp";
+			sourceTree = "<group>";
+		};
+		C21593946CBDB576C81432A9EF0D5574 /* Pods-CommentsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C53C7C12E55BA215230C62C3ED25750E /* Pods-CommentsAppTests-acknowledgements.markdown */,
+				01DB4DDC78CC1B967BC1BD29A4D83773 /* Pods-CommentsAppTests-acknowledgements.plist */,
+				DC95FC96A88E4BEFB526D4CE9E996581 /* Pods-CommentsAppTests-dummy.m */,
+				92336D8592003EB5A307967178A86866 /* Pods-CommentsAppTests.debug.xcconfig */,
+				25827FD35C95EDD2368FB8E30F279256 /* Pods-CommentsAppTests.release.xcconfig */,
+			);
+			name = "Pods-CommentsAppTests";
+			path = "Target Support Files/Pods-CommentsAppTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				290D900AB5E070A98AD6001D9F7C7AEB /* Products */,
+				164B00A3E71D2FC5A0362C2E596E9A6C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2D09775184EA8745A5C219ECB58D7F7F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E55628F68008659BF32E767B5C61A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FBA692FC9ABEF3FF74EDDE6D9839AB8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		106C81C64B956BDB6212CACCE5180415 /* Pods-CommentsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9660AEC4FBEB2ED958F64DD764E2E92 /* Build configuration list for PBXNativeTarget "Pods-CommentsApp" */;
+			buildPhases = (
+				9FBA692FC9ABEF3FF74EDDE6D9839AB8 /* Headers */,
+				53726F1BC54B0377A0080919FFC270CE /* Sources */,
+				92A90AF4C33FB54E106013ED0099CB48 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CommentsApp";
+			productName = "Pods-CommentsApp";
+			productReference = CB1BB2A6F410FA950F5BC68AAD56AF32 /* libPods-CommentsApp.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DFD96D4BD8F65E494B2BBAB70F5A7883 /* Pods-CommentsAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75B12CE1975E895F8D9D43FE710F72CA /* Build configuration list for PBXNativeTarget "Pods-CommentsAppUITests" */;
+			buildPhases = (
+				2D09775184EA8745A5C219ECB58D7F7F /* Headers */,
+				CF7F8AA8BE583FB3FD9BA223010F8DC8 /* Sources */,
+				8B0316CB304652903290D595D2BFE269 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0085CAEEE6D384B3F309C168D12DB8BB /* PBXTargetDependency */,
+			);
+			name = "Pods-CommentsAppUITests";
+			productName = "Pods-CommentsAppUITests";
+			productReference = 0B172E736700A3B5E4EF83A17DA75FBF /* libPods-CommentsAppUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E9575FAE72EBCBBB5FD8BD874B30DD89 /* Pods-CommentsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC72A3BFB793684A57BB256AB6FC7DED /* Build configuration list for PBXNativeTarget "Pods-CommentsAppTests" */;
+			buildPhases = (
+				34E55628F68008659BF32E767B5C61A2 /* Headers */,
+				6AB302C93FAC1856DC3FBDE8561C70A0 /* Sources */,
+				92C5B752756CC333FBC097E741FFE72F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F48AB1DBB8C2980AD42C2837F2FEB0CC /* PBXTargetDependency */,
+			);
+			name = "Pods-CommentsAppTests";
+			productName = "Pods-CommentsAppTests";
+			productReference = 6F68B32F39862D2DF2F1025DC4BA6950 /* libPods-CommentsAppTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 290D900AB5E070A98AD6001D9F7C7AEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				106C81C64B956BDB6212CACCE5180415 /* Pods-CommentsApp */,
+				E9575FAE72EBCBBB5FD8BD874B30DD89 /* Pods-CommentsAppTests */,
+				DFD96D4BD8F65E494B2BBAB70F5A7883 /* Pods-CommentsAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53726F1BC54B0377A0080919FFC270CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA59394DE07AF438B17CE6B935E23FE5 /* Pods-CommentsApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AB302C93FAC1856DC3FBDE8561C70A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B68E985DE4ECFA89E1B68091FF1731B0 /* Pods-CommentsAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF7F8AA8BE583FB3FD9BA223010F8DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9E7E2783311ECE709E6EA42FB5AF262 /* Pods-CommentsAppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0085CAEEE6D384B3F309C168D12DB8BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-CommentsApp";
+			target = 106C81C64B956BDB6212CACCE5180415 /* Pods-CommentsApp */;
+			targetProxy = 9BC3F3B04979313EF5DF18AB7696E0AD /* PBXContainerItemProxy */;
+		};
+		F48AB1DBB8C2980AD42C2837F2FEB0CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-CommentsApp";
+			target = 106C81C64B956BDB6212CACCE5180415 /* Pods-CommentsApp */;
+			targetProxy = 5F43CC338557E655E7ED83493CEA11EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		346A8DEF8E481F0A3D34CAA314E253B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 251D9B5D993B63744E2C102A440F5367 /* Pods-CommentsAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D6AF4A783A3AC5636ADC8A0AFD64728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DEBE71C1305B11E5AC4BC0316CA47B0 /* Pods-CommentsAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		ADF8DF2AD6B03512FF36E161CF0D1D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92336D8592003EB5A307967178A86866 /* Pods-CommentsAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D768AA5EB59BA88050B4BAA2CD63F086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25827FD35C95EDD2368FB8E30F279256 /* Pods-CommentsAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB27FC45AB2EFC6469B0EBADFB77F1E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCCB1C6D4132620C12E4C1AA5FAFCFC4 /* Pods-CommentsApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF68388B7FD3EAD0FEF6191A87DE5913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D49F2794A5EB9CDB42D34BF17813433C /* Pods-CommentsApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */,
+				84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75B12CE1975E895F8D9D43FE710F72CA /* Build configuration list for PBXNativeTarget "Pods-CommentsAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6AF4A783A3AC5636ADC8A0AFD64728 /* Debug */,
+				346A8DEF8E481F0A3D34CAA314E253B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC72A3BFB793684A57BB256AB6FC7DED /* Build configuration list for PBXNativeTarget "Pods-CommentsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADF8DF2AD6B03512FF36E161CF0D1D82 /* Debug */,
+				D768AA5EB59BA88050B4BAA2CD63F086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9660AEC4FBEB2ED958F64DD764E2E92 /* Build configuration list for PBXNativeTarget "Pods-CommentsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF68388B7FD3EAD0FEF6191A87DE5913 /* Debug */,
+				FB27FC45AB2EFC6469B0EBADFB77F1E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
