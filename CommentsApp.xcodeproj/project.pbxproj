@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		130B31C884F4EB2AB5A5D546 /* libPods-CommentsAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 597935A330F92091CB924A2D /* libPods-CommentsAppUITests.a */; };
+		3F4B4C8522858C0A00290858 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C8422858C0A00290858 /* MainViewController.m */; };
+		3F4B4C8822858D5C00290858 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C8722858D5C00290858 /* SplashScreenViewController.m */; };
+		3F4B4C8B22858DC200290858 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C8A22858DC200290858 /* LogInViewController.m */; };
+		3F4B4C8E22858E7A00290858 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C8D22858E7A00290858 /* SignUpViewController.m */; };
+		3F4B4C9122858EC200290858 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9022858EC200290858 /* PostsViewController.m */; };
+		3F4B4C9422858F5100290858 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9322858F5100290858 /* CommentsViewController.m */; };
+		3F4B4C9722858FD100290858 /* SingleCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9622858FD100290858 /* SingleCommentViewController.m */; };
+		3F4B4C9E2285904600290858 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9D2285904600290858 /* NavigationBar.m */; };
+		3F4B4CA02285906900290858 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9F2285906900290858 /* NavigationBar.xib */; };
 		3F607B0722858619000318FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F607B0622858619000318FF /* AppDelegate.m */; };
 		3F607B0A22858619000318FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F607B0922858619000318FF /* ViewController.m */; };
 		3F607B0D2285861A000318FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F607B0B2285861A000318FF /* Main.storyboard */; };
@@ -39,6 +48,23 @@
 
 /* Begin PBXFileReference section */
 		148F957EDDB573D23CCB1CA2 /* libPods-CommentsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommentsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4B4C8322858C0A00290858 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3F4B4C8422858C0A00290858 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3F4B4C8622858D5C00290858 /* SplashScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		3F4B4C8722858D5C00290858 /* SplashScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
+		3F4B4C8922858DC200290858 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		3F4B4C8A22858DC200290858 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		3F4B4C8C22858E7A00290858 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		3F4B4C8D22858E7A00290858 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		3F4B4C8F22858EC200290858 /* PostsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
+		3F4B4C9022858EC200290858 /* PostsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
+		3F4B4C9222858F5100290858 /* CommentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		3F4B4C9322858F5100290858 /* CommentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		3F4B4C9522858FD100290858 /* SingleCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleCommentViewController.h; sourceTree = "<group>"; };
+		3F4B4C9622858FD100290858 /* SingleCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleCommentViewController.m; sourceTree = "<group>"; };
+		3F4B4C9C2285904600290858 /* NavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
+		3F4B4C9D2285904600290858 /* NavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
+		3F4B4C9F2285906900290858 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		3F607B0222858619000318FF /* CommentsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommentsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F607B0522858619000318FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F607B0622858619000318FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +119,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F4B4C8222858BA900290858 /* ViewConntrolers */ = {
+			isa = PBXGroup;
+			children = (
+				3F4B4C8322858C0A00290858 /* MainViewController.h */,
+				3F4B4C8422858C0A00290858 /* MainViewController.m */,
+				3F4B4C8622858D5C00290858 /* SplashScreenViewController.h */,
+				3F4B4C8722858D5C00290858 /* SplashScreenViewController.m */,
+				3F4B4C8922858DC200290858 /* LogInViewController.h */,
+				3F4B4C8A22858DC200290858 /* LogInViewController.m */,
+				3F4B4C8C22858E7A00290858 /* SignUpViewController.h */,
+				3F4B4C8D22858E7A00290858 /* SignUpViewController.m */,
+				3F4B4C8F22858EC200290858 /* PostsViewController.h */,
+				3F4B4C9022858EC200290858 /* PostsViewController.m */,
+				3F4B4C9222858F5100290858 /* CommentsViewController.h */,
+				3F4B4C9322858F5100290858 /* CommentsViewController.m */,
+				3F4B4C9522858FD100290858 /* SingleCommentViewController.h */,
+				3F4B4C9622858FD100290858 /* SingleCommentViewController.m */,
+			);
+			path = ViewConntrolers;
+			sourceTree = "<group>";
+		};
+		3F4B4C9822858FF000290858 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				3F4B4C9C2285904600290858 /* NavigationBar.h */,
+				3F4B4C9D2285904600290858 /* NavigationBar.m */,
+				3F4B4C9F2285906900290858 /* NavigationBar.xib */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		3F607AF922858619000318FF = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +175,8 @@
 		3F607B0422858619000318FF /* CommentsApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F4B4C9822858FF000290858 /* NavigationBar */,
+				3F4B4C8222858BA900290858 /* ViewConntrolers */,
 				3F607B0522858619000318FF /* AppDelegate.h */,
 				3F607B0622858619000318FF /* AppDelegate.m */,
 				3F607B0822858619000318FF /* ViewController.h */,
@@ -169,7 +228,6 @@
 				EDCB77CFE6FA31A6B876F6EA /* Pods-CommentsAppUITests.debug.xcconfig */,
 				6F6E94FB44D8EF1E57A0764A /* Pods-CommentsAppUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -282,6 +340,7 @@
 				3F607B122285861C000318FF /* LaunchScreen.storyboard in Resources */,
 				3F607B0F2285861C000318FF /* Assets.xcassets in Resources */,
 				3F607B0D2285861A000318FF /* Main.storyboard in Resources */,
+				3F4B4CA02285906900290858 /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,9 +434,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4B4C9122858EC200290858 /* PostsViewController.m in Sources */,
 				3F607B0A22858619000318FF /* ViewController.m in Sources */,
 				3F607B152285861C000318FF /* main.m in Sources */,
+				3F4B4C8B22858DC200290858 /* LogInViewController.m in Sources */,
+				3F4B4C9722858FD100290858 /* SingleCommentViewController.m in Sources */,
+				3F4B4C8822858D5C00290858 /* SplashScreenViewController.m in Sources */,
+				3F4B4C9422858F5100290858 /* CommentsViewController.m in Sources */,
 				3F607B0722858619000318FF /* AppDelegate.m in Sources */,
+				3F4B4C8E22858E7A00290858 /* SignUpViewController.m in Sources */,
+				3F4B4C9E2285904600290858 /* NavigationBar.m in Sources */,
+				3F4B4C8522858C0A00290858 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

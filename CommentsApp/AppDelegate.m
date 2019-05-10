@@ -47,5 +47,28 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)openAppHome {
+    
+    //ovde dobijemo nas UIViewController iz storyboard-a.
+    //instantiateViewControllerWithIdentifier se odnosi na storyboard ID
+    //kontrolera koji si stavila u storyboard
+    UIViewController *home = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Drugi"];
+    
+    //UI navigation controller kontrolise tok aplikacije, on prikazuje ili sklanja ekrane
+    //Ovde njega pozovemo, kreiramo ga sa alloc init i damo mu neke parametre
+    //background color white je i sklanjanje default navigation bar-a je standard
+    //obico se pravi custom navigation bar
+    UINavigationController *navVC = [[UINavigationController alloc] init];
+    navVC.view.backgroundColor = [UIColor whiteColor];
+    [navVC setNavigationBarHidden:YES];
+    //push je funkcija navigation controllera koja prikaze ekran koji smo rekli, u ovom slucaju
+    //taj novi koji si ti napravila
+    [navVC pushViewController:home animated:NO];
+    
+    //self se odnosi na app delegate ( koji predstavlja aplikaciju )
+    //stavljamo nas navigation controller da bude root, i od tada mozemo da kontrolisemo ekrane preko njega
+    [self.window setRootViewController:navVC];
+}
+
 
 @end

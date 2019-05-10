@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  MainViewController.h
 //  CommentsApp
 //
 //  Created by Bojana Sladojevic on 10/05/2019.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
-@property (strong, nonatomic) UIWindow *window;
-- (void)openAppHome;
+@interface MainViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
