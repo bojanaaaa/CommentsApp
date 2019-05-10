@@ -9,7 +9,7 @@
 #import "NavigationBar.h"
 
 @implementation NavigationBar
-@synthesize contentView;
+@synthesize contentView,delegate;
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder {
     
@@ -48,5 +48,23 @@
     // Drawing code
 }
 */
+- (IBAction)backButton:(id)sender {
+    
+   /* if([self.delegate respondsToSelector:@selector(backButtonDelegate:)])
+    {
+        [self.delegate backButtonDelegate:self];
+    }*/
+    
+    
+}
+
+
+- (IBAction)logOutButton:(id)sender {
+    /*if ([self.delegate respondsToSelector:@selector(logOutButtonDelegate:)]) {
+        [self.delegate logOutButtonDelegate:self];
+    }*/
+}
+
 
 @end
+

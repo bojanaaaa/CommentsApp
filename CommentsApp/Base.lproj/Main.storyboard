@@ -342,16 +342,29 @@
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zu8-Zm-7hF" customClass="NavigationBar">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="I8J-Lv-4Tf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="height" secondItem="aoC-MP-LGF" secondAttribute="height" id="1iZ-oN-PDU"/>
+                            <constraint firstItem="zu8-Zm-7hF" firstAttribute="centerX" secondItem="hwk-AS-VqN" secondAttribute="centerX" id="4wI-bo-rrk"/>
+                            <constraint firstItem="zu8-Zm-7hF" firstAttribute="width" secondItem="hwk-AS-VqN" secondAttribute="width" id="Bhe-xz-qL3"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="centerX" secondItem="qmo-bB-fN9" secondAttribute="centerX" id="c2e-Uo-k80"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="width" secondItem="aoC-MP-LGF" secondAttribute="width" id="g6y-xx-hY0"/>
+                            <constraint firstItem="qmo-bB-fN9" firstAttribute="top" secondItem="zu8-Zm-7hF" secondAttribute="bottom" constant="-60" id="n2V-pm-8EE"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="centerY" secondItem="qmo-bB-fN9" secondAttribute="centerY" id="r3a-bw-XGa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qmo-bB-fN9"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="zu8-Zm-7hF" id="w6E-4O-G5O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMP-cz-w6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,7 +380,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssl-5Q-oyR">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-aG-Uj2" customClass="NavigationBar">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Bkm-j7-y5t"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eJN-aG-Uj2" firstAttribute="width" secondItem="Ssl-5Q-oyR" secondAttribute="width" id="JpB-t0-wsd"/>
+                                    <constraint firstItem="eJN-aG-Uj2" firstAttribute="centerX" secondItem="Ssl-5Q-oyR" secondAttribute="centerX" id="Ucx-OB-txi"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -375,10 +401,14 @@
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="height" secondItem="p2X-x3-BM3" secondAttribute="height" id="2hL-dJ-klQ"/>
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="width" secondItem="p2X-x3-BM3" secondAttribute="width" id="89A-fo-e4n"/>
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="centerY" secondItem="b3g-5H-WMU" secondAttribute="centerY" id="GU4-Gn-IUc"/>
+                            <constraint firstItem="b3g-5H-WMU" firstAttribute="top" secondItem="eJN-aG-Uj2" secondAttribute="bottom" constant="-60" id="YDM-6C-Zjz"/>
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="centerX" secondItem="b3g-5H-WMU" secondAttribute="centerX" id="Z17-nx-RLv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b3g-5H-WMU"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="eJN-aG-Uj2" id="RYV-n7-enw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjX-Yo-HPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -394,18 +424,35 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-6y-brL">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWr-4x-7IP" customClass="NavigationBar">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="TZz-OR-zvl"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qWr-4x-7IP" firstAttribute="centerX" secondItem="j9d-6y-brL" secondAttribute="centerX" id="Dhq-qd-Gcv"/>
+                                    <constraint firstItem="qWr-4x-7IP" firstAttribute="width" secondItem="j9d-6y-brL" secondAttribute="width" id="wYT-Zb-cKx"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="centerY" secondItem="3MY-iI-Il3" secondAttribute="centerY" id="2EK-7v-q8z"/>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="height" secondItem="hJu-WB-V9o" secondAttribute="height" id="8q6-dg-fpK"/>
+                            <constraint firstItem="3MY-iI-Il3" firstAttribute="top" secondItem="qWr-4x-7IP" secondAttribute="bottom" constant="-60" id="Khx-PA-oRE"/>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="width" secondItem="hJu-WB-V9o" secondAttribute="width" id="ThA-R4-1hg"/>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="centerX" secondItem="3MY-iI-Il3" secondAttribute="centerX" id="oK0-lK-F7g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3MY-iI-Il3"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="qWr-4x-7IP" id="glG-E7-vQs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOz-jt-9Kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

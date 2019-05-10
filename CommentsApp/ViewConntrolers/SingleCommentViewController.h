@@ -7,10 +7,12 @@
 //
 
 #import "MainViewController.h"
+#import "NavigationBar.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SingleCommentViewController : MainViewController
+@interface SingleCommentViewController : MainViewController <NavigationBarDelegate>
+@property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
 
 @end
 

@@ -13,12 +13,20 @@
 @end
 
 @implementation PostsViewController
+@synthesize navigationBar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    navigationBar.delegate=self;    // Do any additional setup after loading the view.
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    
+    navigationBar.backButton.hidden=YES;
+    navigationBar.logOutButton.hidden=NO;
+    navigationBar.label.text=@"Posts";
+    
+    NSLog(@"view will appear");
+}
 /*
 #pragma mark - Navigation
 
