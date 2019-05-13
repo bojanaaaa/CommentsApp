@@ -1,3 +1,51 @@
-PODFILE CHECKSUM: 2841ff4d21932b4d57295895d24adacb140a41f7
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - MGEvents (1.2.1)
+  - SGHTTPRequest (1.9.0):
+    - AFNetworking/NSURLSession (~> 3.0)
+    - AFNetworking/Reachability (~> 3.0)
+    - MGEvents (~> 1.1)
+    - SGHTTPRequest/Core (= 1.9.0)
+    - SGHTTPRequest/UIKit (= 1.9.0)
+  - SGHTTPRequest/Core (1.9.0):
+    - AFNetworking/NSURLSession (~> 3.0)
+    - AFNetworking/Reachability (~> 3.0)
+    - MGEvents (~> 1.1)
+  - SGHTTPRequest/UIKit (1.9.0):
+    - AFNetworking/NSURLSession (~> 3.0)
+    - AFNetworking/Reachability (~> 3.0)
+    - MGEvents (~> 1.1)
+    - SGHTTPRequest/Core
+
+DEPENDENCIES:
+  - AFNetworking
+  - SGHTTPRequest
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - MGEvents
+    - SGHTTPRequest
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  MGEvents: 989c1396082a25e760f03056bdc0af1b6c439c78
+  SGHTTPRequest: 93646208528eafd758052a92ee4dcf04e0d263c5
+
+PODFILE CHECKSUM: 7e179d8ea778ada59bbccd34986e2b20d463e0b0
 
 COCOAPODS: 1.6.1

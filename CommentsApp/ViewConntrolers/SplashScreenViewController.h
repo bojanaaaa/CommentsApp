@@ -7,6 +7,9 @@
 //
 
 #import "MainViewController.h"
+#import "AppDelegate.h"
+#import "AFNetworking.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 

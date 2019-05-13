@@ -2,7 +2,7 @@
 //  PostsViewController.h
 //  CommentsApp
 //
-//  Created by Bojana Sladojevic on 10/05/2019.
+//  Created by Bojana Sladojevic on 13/05/2019.
 //  Copyright © 2019 Bojana Sladojevic. All rights reserved.
 //
 
@@ -12,9 +12,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostsViewController : MainViewController <NavigationBarDelegate>
+@interface PostsViewController : MainViewController <UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
+
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
+
 
 @end
 

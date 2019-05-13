@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBar">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBar" customModule="CommentsAppTests">
             <connections>
                 <outlet property="backButton" destination="i2Y-rW-Bo8" id="IbC-hx-hgC"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="4Wu-h8-cIX"/>

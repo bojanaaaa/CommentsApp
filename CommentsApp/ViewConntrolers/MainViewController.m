@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "User.h"
 
 @interface MainViewController ()
 
@@ -16,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "106C81C64B956BDB6212CACCE5180415"
+               BlueprintIdentifier = "D94E8A73385AADAD97EAAC91416348A2"
                BuildableName = "libPods-CommentsApp.a"
                BlueprintName = "Pods-CommentsApp"
                ReferencedContainer = "container:Pods.xcodeproj">

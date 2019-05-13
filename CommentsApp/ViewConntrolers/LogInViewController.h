@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LogInViewController : MainViewController
+@interface LogInViewController : MainViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *commentsAppLabel;
 

@@ -11,8 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SingleCommentViewController : MainViewController <NavigationBarDelegate>
-@property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
+@interface SingleCommentViewController : MainViewController
 
 @end
 

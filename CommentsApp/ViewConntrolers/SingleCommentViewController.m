@@ -8,24 +8,22 @@
 
 #import "SingleCommentViewController.h"
 
+
 @interface SingleCommentViewController ()
 
 @end
 
 @implementation SingleCommentViewController
-@synthesize navigationBar;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    navigationBar.delegate=self;
+    
+    
     // Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated{
     
-    navigationBar.backButton.hidden=NO;
-    navigationBar.logOutButton.hidden=YES;
-    navigationBar.label.text=@"Comment";
-    
-    NSLog(@"view will appear");
+   
 }/*
 #pragma mark - Navigation
 

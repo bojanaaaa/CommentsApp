@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SignUpViewController : MainViewController
+@interface SignUpViewController : MainViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *commentsAppLabel;
 
@@ -26,7 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (IBAction)signUpButton:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UIButton *logInButton;
+
+- (IBAction)logInButton:(id)sender;
+
 
 
 @end
