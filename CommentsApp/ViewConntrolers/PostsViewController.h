@@ -8,17 +8,23 @@
 
 #import "MainViewController.h"
 #import "NavigationBar.h"
-
+#import "PostsViewController.h"
+#import "User.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostsViewController : MainViewController <UITableViewDelegate>
+@interface PostsViewController : MainViewController
+<UITableViewDelegate,UITableViewDataSource,NavigationBarDelegate>
 
 
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
+
+@property (strong, nonatomic) User *user;
+@property(strong, nonatomic) NSMutableArray *postsArray;
 
 
 @end

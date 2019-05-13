@@ -15,7 +15,6 @@
 		3F4B4C8E22858E7A00290858 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C8D22858E7A00290858 /* SignUpViewController.m */; };
 		3F4B4C9422858F5100290858 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9322858F5100290858 /* CommentsViewController.m */; };
 		3F4B4C9722858FD100290858 /* SingleCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9622858FD100290858 /* SingleCommentViewController.m */; };
-		3F4B4C9E2285904600290858 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9D2285904600290858 /* NavigationBar.m */; };
 		3F607B0722858619000318FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F607B0622858619000318FF /* AppDelegate.m */; };
 		3F607B0A22858619000318FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F607B0922858619000318FF /* ViewController.m */; };
 		3F607B0D2285861A000318FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F607B0B2285861A000318FF /* Main.storyboard */; };
@@ -24,8 +23,6 @@
 		3F607B152285861C000318FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F607B142285861C000318FF /* main.m */; };
 		3F61BC04228951280014C387 /* libPods-CommentsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F61BC03228951280014C387 /* libPods-CommentsApp.a */; };
 		3F61BC0F228966370014C387 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC0E228966370014C387 /* PostsViewController.m */; };
-		3F61BC112289689F0014C387 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9F2285906900290858 /* NavigationBar.xib */; };
-		3F61BC12228968A80014C387 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B4C9F2285906900290858 /* NavigationBar.xib */; };
 		3F61BC1722896EBD0014C387 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC1622896EBD0014C387 /* Post.m */; };
 		3F61BC1A228971150014C387 /* CommentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC19228971150014C387 /* CommentsManager.m */; };
 		3F61BC1D2289713D0014C387 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC1C2289713D0014C387 /* Comment.m */; };
@@ -34,7 +31,10 @@
 		3F61BC2622897A500014C387 /* AlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC2522897A500014C387 /* AlbumManager.m */; };
 		3F61BC2922897B7A0014C387 /* PhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC2822897B7A0014C387 /* PhotoManager.m */; };
 		3F61BC2C2289808B0014C387 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC2B2289808B0014C387 /* UserManager.m */; };
-		3F61BC3222898A4D0014C387 /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC3022898A4D0014C387 /* User.xcdatamodeld */; };
+		3F61BC402289A19B0014C387 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC3F2289A19B0014C387 /* NavigationBar.m */; };
+		3F61BC422289A1A80014C387 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F61BC412289A1A80014C387 /* View.xib */; };
+		3F61BC472289A84B0014C387 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC452289A84B0014C387 /* TableViewCell.m */; };
+		3F61BC482289A84B0014C387 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F61BC462289A84B0014C387 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +74,6 @@
 		3F4B4C9322858F5100290858 /* CommentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		3F4B4C9522858FD100290858 /* SingleCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleCommentViewController.h; sourceTree = "<group>"; };
 		3F4B4C9622858FD100290858 /* SingleCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleCommentViewController.m; sourceTree = "<group>"; };
-		3F4B4C9C2285904600290858 /* NavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
-		3F4B4C9D2285904600290858 /* NavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
-		3F4B4C9F2285906900290858 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		3F607B0222858619000318FF /* CommentsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommentsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F607B0522858619000318FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F607B0622858619000318FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +110,12 @@
 		3F61BC2A2289808B0014C387 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		3F61BC2B2289808B0014C387 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		3F61BC3122898A4D0014C387 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
+		3F61BC3E2289A19B0014C387 /* NavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
+		3F61BC3F2289A19B0014C387 /* NavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
+		3F61BC412289A1A80014C387 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		3F61BC442289A84B0014C387 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		3F61BC452289A84B0014C387 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		3F61BC462289A84B0014C387 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5173885740A064936CBCDBE1 /* Pods-CommentsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentsApp.debug.xcconfig"; path = "Target Support Files/Pods-CommentsApp/Pods-CommentsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EC9813E4A8B1EE658EAB51DC /* Pods-CommentsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentsApp.release.xcconfig"; path = "Target Support Files/Pods-CommentsApp/Pods-CommentsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,9 +206,9 @@
 		3F4B4C9822858FF000290858 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				3F4B4C9C2285904600290858 /* NavigationBar.h */,
-				3F4B4C9D2285904600290858 /* NavigationBar.m */,
-				3F4B4C9F2285906900290858 /* NavigationBar.xib */,
+				3F61BC3E2289A19B0014C387 /* NavigationBar.h */,
+				3F61BC3F2289A19B0014C387 /* NavigationBar.m */,
+				3F61BC412289A1A80014C387 /* View.xib */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				3F3E76DB22862DFE00D29F5B /* Menagers */,
 				3F3E76D722862C7800D29F5B /* User Grupe */,
 				3F4B4C9822858FF000290858 /* NavigationBar */,
+				3F61BC432289A7F10014C387 /* Comment Table View Cell */,
 				3F4B4C8222858BA900290858 /* ViewConntrolers */,
 				3F607B0522858619000318FF /* AppDelegate.h */,
 				3F607B0622858619000318FF /* AppDelegate.m */,
@@ -285,6 +289,16 @@
 				3F61BC22228979CC0014C387 /* Photo.m */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		3F61BC432289A7F10014C387 /* Comment Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3F61BC442289A84B0014C387 /* TableViewCell.h */,
+				3F61BC452289A84B0014C387 /* TableViewCell.m */,
+				3F61BC462289A84B0014C387 /* TableViewCell.xib */,
+			);
+			path = "Comment Table View Cell";
 			sourceTree = "<group>";
 		};
 		8FF25015287734F1B87D3E39 /* Frameworks */ = {
@@ -410,6 +424,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F61BC422289A1A80014C387 /* View.xib in Resources */,
+				3F61BC482289A84B0014C387 /* TableViewCell.xib in Resources */,
 				3F607B122285861C000318FF /* LaunchScreen.storyboard in Resources */,
 				3F607B0F2285861C000318FF /* Assets.xcassets in Resources */,
 				3F607B0D2285861A000318FF /* Main.storyboard in Resources */,
@@ -420,7 +436,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F61BC112289689F0014C387 /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +443,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F61BC12228968A80014C387 /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,12 +481,14 @@
 				3F607B0A22858619000318FF /* ViewController.m in Sources */,
 				3F61BC2C2289808B0014C387 /* UserManager.m in Sources */,
 				3F607B152285861C000318FF /* main.m in Sources */,
+				3F61BC472289A84B0014C387 /* TableViewCell.m in Sources */,
 				3F61BC2922897B7A0014C387 /* PhotoManager.m in Sources */,
 				3F61BC2622897A500014C387 /* AlbumManager.m in Sources */,
 				3F4B4C8B22858DC200290858 /* LogInViewController.m in Sources */,
 				3F61BC0F228966370014C387 /* PostsViewController.m in Sources */,
 				3F61BC1A228971150014C387 /* CommentsManager.m in Sources */,
 				3F4B4C9722858FD100290858 /* SingleCommentViewController.m in Sources */,
+				3F61BC402289A19B0014C387 /* NavigationBar.m in Sources */,
 				3F4B4C8822858D5C00290858 /* SplashScreenViewController.m in Sources */,
 				3F61BC1D2289713D0014C387 /* Comment.m in Sources */,
 				3F4B4C9422858F5100290858 /* CommentsViewController.m in Sources */,
@@ -482,8 +498,6 @@
 				3F61BC23228979CC0014C387 /* Photo.m in Sources */,
 				3F3E76F3228943A600D29F5B /* PostsManager.m in Sources */,
 				3F61BC202289793B0014C387 /* Album.m in Sources */,
-				3F61BC3222898A4D0014C387 /* User.xcdatamodeld in Sources */,
-				3F4B4C9E2285904600290858 /* NavigationBar.m in Sources */,
 				3F4B4C8522858C0A00290858 /* MainViewController.m in Sources */,
 				3F61BC1722896EBD0014C387 /* Post.m in Sources */,
 			);

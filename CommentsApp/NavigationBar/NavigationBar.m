@@ -2,14 +2,16 @@
 //  NavigationBar.m
 //  CommentsApp
 //
-//  Created by Bojana Sladojevic on 10/05/2019.
+//  Created by Bojana Sladojevic on 13/05/2019.
 //  Copyright © 2019 Bojana Sladojevic. All rights reserved.
 //
 
 #import "NavigationBar.h"
 
 @implementation NavigationBar
+
 @synthesize contentView,delegate;
+
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder {
     
@@ -41,6 +43,24 @@
     self.contentView.frame=self.bounds;
 }
 
+- (IBAction)backButton:(id)sender {
+    
+    if([self.delegate respondsToSelector:@selector(backButtonDelegate:)])
+    {
+        [self.delegate backButtonDelegate:self];
+    }
+    
+    
+}
+
+
+- (IBAction)logOutButton:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(logOutButtonDelegate:)]) {
+        [self.delegate logOutButtonDelegate:self];
+    }
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -48,23 +68,5 @@
     // Drawing code
 }
 */
-- (IBAction)backButton:(id)sender {
-    
-   /* if([self.delegate respondsToSelector:@selector(backButtonDelegate:)])
-    {
-        [self.delegate backButtonDelegate:self];
-    }*/
-    
-    
-}
-
-
-- (IBAction)logOutButton:(id)sender {
-    /*if ([self.delegate respondsToSelector:@selector(logOutButtonDelegate:)]) {
-        [self.delegate logOutButtonDelegate:self];
-    }*/
-}
-
 
 @end
-

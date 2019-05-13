@@ -351,29 +351,41 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwk-AS-VqN">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-6k-qVe">
-                                        <rect key="frame" x="15" y="149" width="384" height="727"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-6k-qVe">
+                                        <rect key="frame" x="15" y="139" width="384" height="737"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raz-w5-jL8" customClass="NavigationBar">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Rez-9P-uqs"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="J3B-6k-qVe" secondAttribute="trailing" constant="15" id="CNS-Bs-wqG"/>
                                     <constraint firstAttribute="bottom" secondItem="J3B-6k-qVe" secondAttribute="bottom" constant="20" symbolic="YES" id="F9x-5u-Mrg"/>
+                                    <constraint firstItem="raz-w5-jL8" firstAttribute="width" secondItem="hwk-AS-VqN" secondAttribute="width" id="aPJ-J9-Wiq"/>
                                     <constraint firstItem="J3B-6k-qVe" firstAttribute="leading" secondItem="hwk-AS-VqN" secondAttribute="leading" constant="15" id="ldo-AE-h6Y"/>
+                                    <constraint firstItem="J3B-6k-qVe" firstAttribute="top" secondItem="raz-w5-jL8" secondAttribute="bottom" constant="40" id="pWO-LY-cG4"/>
+                                    <constraint firstItem="raz-w5-jL8" firstAttribute="centerX" secondItem="J3B-6k-qVe" secondAttribute="centerX" id="uhY-Zg-ecU"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hwk-AS-VqN" firstAttribute="height" secondItem="aoC-MP-LGF" secondAttribute="height" id="1iZ-oN-PDU"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="hwk-AS-VqN" secondAttribute="bottom" constant="-39" id="BtI-4u-S6Y"/>
+                            <constraint firstItem="qmo-bB-fN9" firstAttribute="top" secondItem="raz-w5-jL8" secondAttribute="bottom" constant="-60" id="Mgz-Qu-8xh"/>
+                            <constraint firstItem="hwk-AS-VqN" firstAttribute="top" secondItem="aoC-MP-LGF" secondAttribute="topMargin" constant="-39" id="Umh-tE-OSW"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="centerX" secondItem="qmo-bB-fN9" secondAttribute="centerX" id="c2e-Uo-k80"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="width" secondItem="aoC-MP-LGF" secondAttribute="width" id="g6y-xx-hY0"/>
-                            <constraint firstItem="hwk-AS-VqN" firstAttribute="centerY" secondItem="qmo-bB-fN9" secondAttribute="centerY" id="r3a-bw-XGa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qmo-bB-fN9"/>
                     </view>
                     <connections>
+                        <outlet property="navigationBar" destination="raz-w5-jL8" id="rUi-WC-Ndv"/>
                         <outlet property="tableView" destination="J3B-6k-qVe" id="ruA-R5-xcX"/>
                     </connections>
                 </viewController>
@@ -391,13 +403,27 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssl-5Q-oyR">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZU-ge-K3I" customClass="NavigationBar">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="9ME-0F-C0E"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GZU-ge-K3I" firstAttribute="centerX" secondItem="Ssl-5Q-oyR" secondAttribute="centerX" id="CXn-Y3-J3q"/>
+                                    <constraint firstItem="GZU-ge-K3I" firstAttribute="width" secondItem="Ssl-5Q-oyR" secondAttribute="width" id="Fry-Qp-vPe"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="height" secondItem="p2X-x3-BM3" secondAttribute="height" id="2hL-dJ-klQ"/>
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="width" secondItem="p2X-x3-BM3" secondAttribute="width" id="89A-fo-e4n"/>
+                            <constraint firstItem="b3g-5H-WMU" firstAttribute="top" secondItem="GZU-ge-K3I" secondAttribute="bottom" constant="-60" id="8Dj-Iz-bYH"/>
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="centerY" secondItem="b3g-5H-WMU" secondAttribute="centerY" id="GU4-Gn-IUc"/>
                             <constraint firstItem="Ssl-5Q-oyR" firstAttribute="centerX" secondItem="b3g-5H-WMU" secondAttribute="centerX" id="Z17-nx-RLv"/>
                         </constraints>
@@ -406,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjX-Yo-HPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2806" y="21"/>
+            <point key="canvasLocation" x="2805.7971014492755" y="20.758928571428569"/>
         </scene>
         <!--Single Comment View Controller-->
         <scene sceneID="TTg-au-5lz">
@@ -418,13 +444,27 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-6y-brL">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyX-m1-gtg" customClass="NavigationBar">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="yta-uE-Z8N"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dyX-m1-gtg" firstAttribute="width" secondItem="j9d-6y-brL" secondAttribute="width" id="hNT-nD-ADg"/>
+                                    <constraint firstItem="dyX-m1-gtg" firstAttribute="centerX" secondItem="j9d-6y-brL" secondAttribute="centerX" id="voJ-E4-XPb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="centerY" secondItem="3MY-iI-Il3" secondAttribute="centerY" id="2EK-7v-q8z"/>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="height" secondItem="hJu-WB-V9o" secondAttribute="height" id="8q6-dg-fpK"/>
+                            <constraint firstItem="3MY-iI-Il3" firstAttribute="top" secondItem="dyX-m1-gtg" secondAttribute="bottom" constant="-60" id="AAB-6y-rp1"/>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="width" secondItem="hJu-WB-V9o" secondAttribute="width" id="ThA-R4-1hg"/>
                             <constraint firstItem="j9d-6y-brL" firstAttribute="centerX" secondItem="3MY-iI-Il3" secondAttribute="centerX" id="oK0-lK-F7g"/>
                         </constraints>

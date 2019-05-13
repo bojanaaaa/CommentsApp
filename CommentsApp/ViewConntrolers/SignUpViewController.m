@@ -69,13 +69,16 @@
         
     }
     
-    
     if ([passwordTextField.text length]==0){
         
         passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password is reqired!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
         
     }
-    
+    if ([passwordTextField.text length]<6){
+        
+        passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password is too short!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
+        
+    }
     else if([confirmedPasswordTextField.text isEqualToString:passwordTextField.text])
     {
         [[UserManager sharedManager]setUser:emailTextField.text and:passwordTextField.text];

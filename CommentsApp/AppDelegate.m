@@ -88,6 +88,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
+    //STA SE DOGODI??
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CommentsApp" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
@@ -98,7 +99,7 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    
+  //STA SE DOGODI??
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CommentsApp.sqlite"];
     
     

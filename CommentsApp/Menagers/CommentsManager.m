@@ -70,5 +70,21 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"finishedLoadingComments" object:nil];
 }
+-(NSMutableArray* )formCommentsArray:(NSString*)postID {
+    
+    NSMutableArray *newCommentsArray=[NSMutableArray new];
+    
+    for (Comment *comment in commentsArray)
+    {
+        if([comment.postID isEqualToString:postID])
+        {
+            [newCommentsArray addObject:comment];
+            
+        }
+    }
+    
+    return newCommentsArray;
+    
+}
 
 @end

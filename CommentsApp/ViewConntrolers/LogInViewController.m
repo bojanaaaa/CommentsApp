@@ -72,6 +72,7 @@
         
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         CommentsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"CommentsViewController"];
+        
         //cartController.user = user;
         
         //[self.navigationController pushViewController:cartController animated:YES];
@@ -148,9 +149,18 @@
 }
 
 - (IBAction)logInButton:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
+    //cartController.user = user;
+    NSLog(@"user %@",user.email);
+    passwordTextField.text=@"";
+    emailTextField.text=@"";
+    
+    [self.navigationController pushViewController:cartController animated:YES];
+    
+    
     
     User *user;
-    
     
     if ( [emailTextField.text length]==0 )
         
