@@ -70,18 +70,22 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"finishedLoadingComments" object:nil];
 }
--(NSMutableArray* )formCommentsArray:(NSString*)postID {
+-(NSMutableArray* )formCommentsArray:(NSNumber*)postID {
     
     NSMutableArray *newCommentsArray=[NSMutableArray new];
     
     for (Comment *comment in commentsArray)
     {
-        if([comment.postID isEqualToString:postID])
+        NSLog(@"%@ %@",[comment.postID class],[postID class]);
+        if(comment.postID == postID)
         {
+            NSLog(@"naso");
             [newCommentsArray addObject:comment];
             
         }
     }
+    
+    NSLog(@"comments number %li", (long)[newCommentsArray count]);
     
     return newCommentsArray;
     

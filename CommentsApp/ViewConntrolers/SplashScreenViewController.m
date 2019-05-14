@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setLabel];
+    [[UserManager sharedManager]initUserManager];
     //[[UserManager sharedManager]initUserManager];
     // Do any additional setup after loading the view.
     [self initPostsManager];

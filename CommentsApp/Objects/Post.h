@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Post : NSObject
 
-@property (strong,nonatomic) NSString *title,*body,*postID,*userID;
-
+@property (strong,nonatomic) NSString *title,*body;
+@property (strong,nonatomic) NSNumber *postID,*userID;
 
 
 @end

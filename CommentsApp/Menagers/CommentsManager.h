@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong,nonatomic) NSMutableArray *commentsArray;
 -(void) initManager;
--(NSMutableArray* )formCommentsArray:(NSString*) postID;
+-(NSMutableArray* )formCommentsArray:(NSNumber*) postID;
 
 
 @end

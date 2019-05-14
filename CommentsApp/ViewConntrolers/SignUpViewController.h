@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SignUpViewController : MainViewController<UITextFieldDelegate>
+@interface SignUpViewController : MainViewController<UITextFieldDelegate,UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *commentsAppLabel;
 
@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *somethingWentWrongLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *logInLabel;
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewBottom;
 
 - (IBAction)signUpButton:(id)sender;
 

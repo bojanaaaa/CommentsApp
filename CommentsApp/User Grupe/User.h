@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User : NSObject
+@interface User : NSManagedObject
 
 @property(strong,nonatomic) NSString *password,*email;
 

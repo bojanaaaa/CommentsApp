@@ -31,12 +31,10 @@
     [super viewDidLoad];
     
     emailTextField.delegate = self;
-    [emailTextField addTarget:self action:@selector( textFieldDidStartEditing:)
-    forControlEvents:UIControlEventEditingChanged];
+    [self SetTextFieldBorder:emailTextField];
     
     passwordTextField.delegate = self;
-    [passwordTextField addTarget:self action:@selector (passwordTextFieldDidStartEditing:)
-    forControlEvents:UIControlEventEditingChanged];
+    [self SetTextFieldBorder:passwordTextField];
     
     emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
     
@@ -149,16 +147,6 @@
 }
 
 - (IBAction)logInButton:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
-    //cartController.user = user;
-    NSLog(@"user %@",user.email);
-    passwordTextField.text=@"";
-    emailTextField.text=@"";
-    
-    [self.navigationController pushViewController:cartController animated:YES];
-    
-    
     
     User *user;
     
@@ -197,6 +185,8 @@
         
         if(user.password==passwordTextField.text)
         {
+            emailTextField.text=@"";
+            passwordTextField.text=@"";
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
             //cartController.user = user;

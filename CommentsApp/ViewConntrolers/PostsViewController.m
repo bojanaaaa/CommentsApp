@@ -38,6 +38,7 @@
     navigationBar.logOutButton.hidden=NO;
     navigationBar.nameLabel.text=@"POSTS";
     
+    
     NSLog(@"view will appear");
 }
 - (void)logOutButtonDelegate:(id)sender{
@@ -130,8 +131,10 @@
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CommentsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"CommentsViewController"];
-//    cartController.data=newCommentsArray;
+    cartController.commentsArray=newCommentsArray;
+    NSLog(@"%li",(long)[cartController.commentsArray count]);
     
+    cartController.post=postAtRow;
     [self.navigationController pushViewController:cartController animated:YES];
     
 }

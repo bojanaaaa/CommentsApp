@@ -10,7 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UITextFieldDelegate>
+- (void)showLoadingUseFullScreen:(bool)fullscreen;
+- (void)hideLoading;
+- (void)SetTextFieldBorder :(UITextField *)textField;
 
 @end
 

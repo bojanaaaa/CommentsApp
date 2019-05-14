@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *label1;
 @property (strong, nonatomic) IBOutlet UILabel *label2;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 NS_ASSUME_NONNULL_END

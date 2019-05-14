@@ -43,6 +43,11 @@
     self.contentView.frame=self.bounds;
 }
 
+
+
+- (IBAction)photoSwitch:(id)sender {
+}
+
 - (IBAction)backButton:(id)sender {
     
     if([self.delegate respondsToSelector:@selector(backButtonDelegate:)])
@@ -56,6 +61,7 @@
 
 - (IBAction)logOutButton:(id)sender {
     if ([self.delegate respondsToSelector:@selector(logOutButtonDelegate:)]) {
+        
         [self.delegate logOutButtonDelegate:self];
     }
 }

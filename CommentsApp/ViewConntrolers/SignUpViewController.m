@@ -20,14 +20,23 @@
     NSMutableArray *users;
     NSString *temp;
 }
-@synthesize emailTextField,passwordTextField,confirmedPasswordTextField,somethingWentWrongLabel,logInLabel;
+@synthesize emailTextField,passwordTextField,confirmedPasswordTextField,somethingWentWrongLabel,logInLabel,scrollView,scrollViewBottom;
 - (void)viewDidLoad {
     [super viewDidLoad];
     emailTextField.delegate=self;
     passwordTextField.delegate=self;
     confirmedPasswordTextField.delegate=self;
+    scrollView.delegate=self;
+    [self SetTextFieldBorder:emailTextField];
+    [self SetTextFieldBorder:passwordTextField];
+    [self SetTextFieldBorder:confirmedPasswordTextField];
+    
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
     
     emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+    
     
     passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
     
@@ -104,4 +113,35 @@
     [self.navigationController pushViewController:cartController animated:YES];
     
 }
+
+#pragma mark Keyboard change methods
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [UIView animateWithDuration:0.3 animations:^{
+        self->scrollViewBottom.constant = 0;
+    }];
+}
+
+- (void)keyboardFrameWillChange:(NSNotification *)notification {
+    
+    CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
+    
+    [self.view layoutIfNeeded];
+    
+    CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
+    
+    if (keyboardFrameEnd.size.height > 0) {
+        scrollViewBottom.constant = keyboardFrameEnd.size.height + 20;
+        [scrollView setContentOffset:CGPointMake(0, emailTextField.frame.origin.y)];
+        
+    }
+    
+    
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
 @end

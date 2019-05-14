@@ -8,10 +8,21 @@
 
 #import "MainViewController.h"
 #import "NavigationBar.h"
+#import "Comment.h"
+#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SingleCommentViewController : MainViewController
+@interface SingleCommentViewController : MainViewController <NavigationBarDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bodyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *imageNameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong,nonatomic) Comment *comment;
+@property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
+@property (strong, nonatomic) IBOutlet Post  *mainPost;
+@property NSInteger index;
 
 @end
 

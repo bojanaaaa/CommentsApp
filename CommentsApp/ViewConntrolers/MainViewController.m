@@ -13,14 +13,47 @@
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController{
+    UIActivityIndicatorView *loadingIndicator;
+    UIView *menuOverlayView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
 }
+- (void)showLoadingUseFullScreen:(bool)fullscreen {
+    if (!loadingIndicator) {
+        loadingIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
+        
+        loadingIndicator.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.7];
+        [self.view addSubview:loadingIndicator];
+    }
+    [loadingIndicator startAnimating];
+    loadingIndicator.hidden = false;
+    [self.view bringSubviewToFront:loadingIndicator];
+}
+
+- (void)hideLoading {
+    if (loadingIndicator) {
+        [loadingIndicator stopAnimating];
+        loadingIndicator.hidden = true;
+        [self.view sendSubviewToBack:loadingIndicator];
+    }
+}
+-(void)SetTextFieldBorder :(UITextField *)textField{
+    
+    CALayer *border = [CALayer layer];
+    CGFloat borderWidth = 2;
+    border.borderColor = [UIColor grayColor].CGColor;
+    border.frame = CGRectMake(0, textField.frame.size.height - borderWidth, textField.frame.size.width, textField.frame.size.height);
+    border.borderWidth = borderWidth;
+    [textField.layer addSublayer:border];
+    textField.layer.masksToBounds = YES;
+    
+}
 /*
 #pragma mark - Navigation
 

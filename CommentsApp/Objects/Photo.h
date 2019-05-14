@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Photo : NSObject
 
-@property (strong,nonatomic) NSString *albumID,*photoID,*title,*url;
+@property (strong,nonatomic) NSString *title,*url;
+@property (strong,nonatomic) NSNumber *albumID,*photoID;
 
 @end
 

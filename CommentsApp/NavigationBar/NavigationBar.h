@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
+- (IBAction)photoSwitch:(id)sender;
+
+
 
 - (IBAction)backButton:(id)sender;
 - (IBAction)logOutButton:(id)sender;

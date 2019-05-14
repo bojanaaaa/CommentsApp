@@ -35,6 +35,7 @@
 		3F61BC422289A1A80014C387 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F61BC412289A1A80014C387 /* View.xib */; };
 		3F61BC472289A84B0014C387 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC452289A84B0014C387 /* TableViewCell.m */; };
 		3F61BC482289A84B0014C387 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F61BC462289A84B0014C387 /* TableViewCell.xib */; };
+		3FA3CFAA228ABDE400C47836 /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F61BC3022898A4D0014C387 /* User.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -500,6 +501,7 @@
 				3F61BC202289793B0014C387 /* Album.m in Sources */,
 				3F4B4C8522858C0A00290858 /* MainViewController.m in Sources */,
 				3F61BC1722896EBD0014C387 /* Post.m in Sources */,
+				3FA3CFAA228ABDE400C47836 /* User.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
