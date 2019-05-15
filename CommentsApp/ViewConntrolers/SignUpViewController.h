@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewBottom;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentsAppTop;
 - (IBAction)signUpButton:(id)sender;
 
 

@@ -22,11 +22,10 @@
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="hdX-Au-hUT">
-                                        <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                        <rect key="frame" x="7" y="348" width="400" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="O5o-AE-E7b"/>
-                                            <constraint firstAttribute="width" secondItem="hdX-Au-hUT" secondAttribute="height" multiplier="15:8" id="XVC-XL-Hmr"/>
-                                            <constraint firstAttribute="width" constant="240" id="m1D-RI-6Pf"/>
+                                            <constraint firstAttribute="height" constant="200" id="O5o-AE-E7b"/>
+                                            <constraint firstAttribute="width" constant="400" id="m1D-RI-6Pf"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>

@@ -11,6 +11,7 @@
 #import "PostsViewController.h"
 #import "UserManager.h"
 #import "User.h"
+#import "Konstante.h"
 
 @interface SignUpViewController ()
 
@@ -20,16 +21,26 @@
     NSMutableArray *users;
     NSString *temp;
 }
-@synthesize emailTextField,passwordTextField,confirmedPasswordTextField,somethingWentWrongLabel,logInLabel,scrollView,scrollViewBottom;
+@synthesize emailTextField,passwordTextField,confirmedPasswordTextField,somethingWentWrongLabel,logInLabel,scrollView,scrollViewBottom,commentsAppTop;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     emailTextField.delegate=self;
     passwordTextField.delegate=self;
     confirmedPasswordTextField.delegate=self;
     scrollView.delegate=self;
+    
     [self SetTextFieldBorder:emailTextField];
     [self SetTextFieldBorder:passwordTextField];
     [self SetTextFieldBorder:confirmedPasswordTextField];
+    if (IS_IPHONE_5)
+    {commentsAppTop.constant=225;
+        NSLog(@"radim");
+    }
+    
+    
+    if (IS_IPHONE_6)
+        commentsAppTop.constant=225;
     
    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -42,6 +53,11 @@
     
     confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
     
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Password must contain a minimum of 6 characters"]];
+    NSInteger i=[attrStr length];
+    [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0,i)];
+    somethingWentWrongLabel.attributedText = attrStr;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -52,6 +68,28 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+
+- (IBAction)emailEditingDidBegin:(id)sender {
+    emailTextField.placeholder=nil;
+    emailTextField.text=temp;
+}
+- (IBAction)passwordEditingDidBegin:(id)sender {
+    passwordTextField.placeholder=nil;
+}
+- (IBAction)confirmationEditingDidBegin:(id)sender {
+    confirmedPasswordTextField.placeholder=nil;
+}
+- (IBAction)emailEditingDidEnd:(id)sender {
+    emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+
+}
+- (IBAction)passwordEditingDidEnd:(id)sender {
+      passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+}
+- (IBAction)confirmationEditingDidEnd:(id)sender {
+       confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+}
+
 
 
 - (IBAction)signUpButton:(id)sender {
@@ -85,6 +123,12 @@
     }
     if ([passwordTextField.text length]<6){
         
+        passwordTextField.text=@"";
+        confirmedPasswordTextField.text=@"";
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Password must contain a minimum of 6 characters"]];
+        NSInteger i=[attrStr length];
+        [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,i)];
+        somethingWentWrongLabel.attributedText = attrStr;
         passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password is too short!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
         
     }

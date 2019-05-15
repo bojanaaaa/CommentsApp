@@ -10,6 +10,6 @@
 
 @implementation User
 
-@dynamic email,password;
+@dynamic email,password,switchBOOL;
 
 @end

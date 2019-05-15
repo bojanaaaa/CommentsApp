@@ -14,7 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showLoadingUseFullScreen:(bool)fullscreen;
 - (void)hideLoading;
 - (void)SetTextFieldBorder :(UITextField *)textField;
-
+-(void)initPostsManager;
+-(void)initPhotoManager;
+-(void)initCommentsManager;
+-(void)initAlbumManager;
 @end
 
 NS_ASSUME_NONNULL_END

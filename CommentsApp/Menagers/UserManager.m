@@ -42,6 +42,8 @@
     NSManagedObject *object=[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     [object setValue:email forKey:@"email"];
     [object setValue:password forKey:@"password"];
+    /*NSString *str=@"YES";
+    [object setValue:str forKey:@"switchBOOL"];*/
     
     [context save:nil];
     

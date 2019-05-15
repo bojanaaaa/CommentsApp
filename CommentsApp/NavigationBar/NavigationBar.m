@@ -46,6 +46,13 @@
 
 
 - (IBAction)photoSwitch:(id)sender {
+    
+    if([self.delegate respondsToSelector:@selector(photoSwitchDelegate:)])
+    {
+        [self.delegate photoSwitchDelegate:self];
+    }
+    
+    
 }
 
 - (IBAction)backButton:(id)sender {

@@ -37,6 +37,8 @@
     navigationBar.beckButton.hidden=YES;
     navigationBar.logOutButton.hidden=NO;
     navigationBar.nameLabel.text=@"POSTS";
+    navigationBar.photoSwitch.hidden=YES;
+    
     
     
     NSLog(@"view will appear");
@@ -125,14 +127,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     Post *postAtRow=[postsArray objectAtIndex:indexPath.row];
+    NSMutableArray *newCommentsArray;
     
-    NSMutableArray *newCommentsArray=[[CommentsManager sharedManager]formCommentsArray:postAtRow.postID];
-    
-    
+    newCommentsArray=[[CommentsManager sharedManager]formCommentsArray:postAtRow.postID];
+        
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CommentsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"CommentsViewController"];
     cartController.commentsArray=newCommentsArray;
-    NSLog(@"%li",(long)[cartController.commentsArray count]);
+    NSLog(@"ovde sam %li",(long)[cartController.commentsArray count]);
     
     cartController.post=postAtRow;
     [self.navigationController pushViewController:cartController animated:YES];

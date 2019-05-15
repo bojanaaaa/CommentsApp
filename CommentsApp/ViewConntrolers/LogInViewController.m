@@ -12,7 +12,7 @@
 #import "PostsViewController.h"
 #import "CommentsViewController.h"
 #import "UserManager.h"
-
+#import "Konstante.h"
 @interface LogInViewController ()
 
 @end
@@ -25,11 +25,23 @@
     User *user;
     
 }
-@synthesize commentsAppLabel,emailTextField,passwordTextField,rememberMeLabel,somethingWentWrongLabel,checkImage,signUpLabel;
+@synthesize commentsAppLabel,emailTextField,passwordTextField,rememberMeLabel,somethingWentWrongLabel,checkImage,signUpLabel,commentsAppTop,scrollView,scrollViewBottom;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    scrollView.delegate=self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    if (IS_IPHONE_5)
+        commentsAppTop.constant=50;
+  
+      
+    if (IS_IPHONE_6)
+        commentsAppTop.constant=70;
+        
     emailTextField.delegate = self;
     [self SetTextFieldBorder:emailTextField];
     
@@ -53,6 +65,14 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     
+    if (IS_IPHONE_5)
+    {commentsAppTop.constant=225;
+        NSLog(@"radim");
+    }
+    
+    
+    if (IS_IPHONE_6)
+        commentsAppTop.constant=225;
     rememberMe=[self rememberMe];
     
     if (rememberMe)
@@ -73,7 +93,7 @@
         
         //cartController.user = user;
         
-        //[self.navigationController pushViewController:cartController animated:YES];
+       // [self.navigationController pushViewController:cartController animated:YES];
     }
     else {
         
@@ -217,5 +237,34 @@
     
     [self.navigationController pushViewController:cartController animated:YES];
     
+}
+#pragma mark Keyboard change methods
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [UIView animateWithDuration:0.3 animations:^{
+        self->scrollViewBottom.constant = 0;
+    }];
+}
+
+- (void)keyboardFrameWillChange:(NSNotification *)notification {
+    
+    CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
+    
+    [self.view layoutIfNeeded];
+    
+    CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
+    
+    if (keyboardFrameEnd.size.height > 0) {
+        scrollViewBottom.constant = keyboardFrameEnd.size.height + 10;
+        [scrollView setContentOffset:CGPointMake(0, emailTextField.frame.origin.y)];
+        
+    }
+    
+    
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 @end

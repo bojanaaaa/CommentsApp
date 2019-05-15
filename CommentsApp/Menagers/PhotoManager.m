@@ -69,5 +69,22 @@
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"finishedLoadingPhotos" object:nil];
+    
+}
+-(Photo *)getPhoto:(NSNumber*)commentID{
+    
+    Photo *image=[Photo new];
+    
+    for(Photo *photo in photoArray)
+        if(image.photoID == commentID)
+        {
+            NSLog(@"naso");
+            image=photo;
+            return image;
+            
+        }
+    
+    return image;
+    
 }
 @end

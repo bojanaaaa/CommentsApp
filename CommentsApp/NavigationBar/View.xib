@@ -15,6 +15,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="V1k-FT-wV8"/>
                 <outlet property="logOutButton" destination="Or8-vW-Txw" id="tWd-8R-8zd"/>
                 <outlet property="nameLabel" destination="PoJ-5t-cle" id="Qyt-d9-GXv"/>
+                <outlet property="photoSwitch" destination="zHa-Rl-38S" id="QaV-MR-iYB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -47,7 +48,7 @@
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHa-Rl-38S">
                     <rect key="frame" x="354" y="14.5" width="51" height="31"/>
                     <connections>
-                        <action selector="photoSwitch:" destination="-1" eventType="valueChanged" id="oip-Yd-Otf"/>
+                        <action selector="photoSwitch:" destination="-1" eventType="valueChanged" id="O8y-Jc-9LF"/>
                     </connections>
                 </switch>
             </subviews>

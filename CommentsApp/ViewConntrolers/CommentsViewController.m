@@ -43,6 +43,7 @@
     navigationBar.beckButton.hidden=NO;
     navigationBar.logOutButton.hidden=YES;
     navigationBar.nameLabel.text=@"COMMENTS";
+    navigationBar.photoSwitch.hidden=YES;
     
     
 }
@@ -86,6 +87,7 @@
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     
     Comment *commentAtRow=[commentsArray objectAtIndex:indexPath.row];
     

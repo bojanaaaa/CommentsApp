@@ -36,14 +36,15 @@
     emailLabel.text=comment.email;
     nameLabel.text=comment.name;
     
+   
     NSMutableArray *photos=[PhotoManager sharedManager].photoArray;
     Photo *photo=[Photo new];
     photo=photos[index];
     imageNameLabel.text=photo.title;
     
-    NSURL *url=[NSURL fileURLWithPath:photo.url];
     
-    NSData *data= [[NSData alloc] initWithContentsOfURL:url];
+    NSString *imgString=photo.url;
+    NSData *data= [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imgString]];
     imageView.image= [UIImage imageWithData:data];
     // Do any additional setup after loading the view.
 }
@@ -59,6 +60,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)photoSwitchDelegate:(id)sender{
+    
+    if(imageView.hidden==YES)
+        imageView.hidden=NO;
+    
+    if(imageView.hidden==NO)
+        imageView.hidden=YES;
+    
+}
 /*
 #pragma mark - Navigation
 

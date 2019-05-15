@@ -8,7 +8,14 @@
 
 #import "MainViewController.h"
 #import "User.h"
-
+#import "SplashScreenViewController.h"
+#import "LogInViewController.h"
+#import "PostsManager.h"
+#import "CommentsManager.h"
+#import "PhotoManager.h"
+#import "AlbumManager.h"
+#import "AFNetworking.h"
+#import "UserManager.h"
 @interface MainViewController ()
 
 @end
@@ -53,6 +60,41 @@
     [textField.layer addSublayer:border];
     textField.layer.masksToBounds = YES;
     
+}
+-(void)initPostsManager{
+    [[PostsManager sharedManager]initManager];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initPhotoManager) name:@"finishedLoadingPosts" object:nil];
+    
+}
+-(void)initPhotoManager{
+    [[PhotoManager sharedManager]initManager];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initAlbumManager) name:@"finishedLoadingPhotos" object:nil];
+    
+}
+-(void)initAlbumManager{
+    [[AlbumManager sharedManager]initManager];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initCommentsManager) name:@"finishedLoadingAlbums" object:nil];
+    
+}
+-(void)initCommentsManager{
+    [[CommentsManager sharedManager]initManager];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(next:) name:@"finishedLoadingComments" object:nil];
+    
+}
+
+
+
+- (void)next: (NSNotification *)notification  {
+    
+    AppDelegate *applicationDelegate;
+    applicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    
+    
+    
+    //pozivamo funkciju app delegate koja ce da prikaze nas pocetni ekran
+    //ako ti se ne prikaze ova funkcija, moras je dodati u .h fajl
+    [applicationDelegate openAppHome];
 }
 /*
 #pragma mark - Navigation

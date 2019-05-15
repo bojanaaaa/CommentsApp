@@ -36,6 +36,7 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="jOA-O0-7Eq" firstAttribute="leading" secondItem="F7Q-Wm-N9x" secondAttribute="trailing" id="0vv-dm-oyB"/>
                     <constraint firstItem="lY3-EC-b3d" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="5:6" id="1rt-jS-ACh"/>
                     <constraint firstItem="lY3-EC-b3d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="H65-j2-uwp"/>
                     <constraint firstItem="F7Q-Wm-N9x" firstAttribute="width" secondItem="lY3-EC-b3d" secondAttribute="width" id="Xyy-4A-6wp"/>
