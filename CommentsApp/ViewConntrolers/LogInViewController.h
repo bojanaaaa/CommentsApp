@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "User.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -36,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)logInButton:(id)sender;
 
 - (IBAction)signUpButton:(id)sender;
+
+@property (strong,nonatomic) User *myCurrentUser;
 
 
 @end

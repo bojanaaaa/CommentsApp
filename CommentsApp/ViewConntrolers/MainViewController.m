@@ -30,11 +30,10 @@
     
     // Do any additional setup after loading the view.
 }
-- (void)showLoadingUseFullScreen:(bool)fullscreen {
+/*- (void)showLoadingUseFullScreen:(bool)fullscreen {
     if (!loadingIndicator) {
         loadingIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-
-        
+        NSLog(@"indikejtor");
         loadingIndicator.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.7];
         [self.view addSubview:loadingIndicator];
     }
@@ -49,7 +48,7 @@
         loadingIndicator.hidden = true;
         [self.view sendSubviewToBack:loadingIndicator];
     }
-}
+}*/
 -(void)SetTextFieldBorder :(UITextField *)textField{
     
     CALayer *border = [CALayer layer];

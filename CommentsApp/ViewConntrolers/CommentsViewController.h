@@ -10,6 +10,7 @@
 #import "NavigationBar.h"
 #import "Comment.h"
 #import "Post.h"
+#import "User.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CommentsViewController : MainViewController <UITableViewDelegate,UITableViewDataSource,NavigationBarDelegate>
@@ -18,9 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong,nonatomic) Comment *comment;
 @property(strong,nonatomic) NSMutableArray *commentsArray;
 @property(strong,nonatomic) Post *post;
+@property(strong,nonatomic) User *myCurrentUser;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *bodyLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 @end
 

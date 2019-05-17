@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (CommentsManager *)sharedManager;
 
-@property (strong,nonatomic) NSMutableArray *commentsArray;
+@property (strong,nonatomic) NSMutableArray *commentsArray,*postcommentsArray;
 -(void) initManager;
--(NSMutableArray* )formCommentsArray:(NSNumber*) postID;
+-(void )formCommentsArray:(NSNumber*) postID;
 
 
 @end

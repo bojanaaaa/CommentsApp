@@ -421,18 +421,26 @@
                                     <constraint firstItem="raz-w5-jL8" firstAttribute="centerX" secondItem="J3B-6k-qVe" secondAttribute="centerX" id="uhY-Zg-ecU"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Nrg-ot-67f">
+                                <rect key="frame" x="15" y="144" width="384" height="737"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="hwk-AS-VqN" secondAttribute="bottom" constant="-39" id="BtI-4u-S6Y"/>
+                            <constraint firstItem="Nrg-ot-67f" firstAttribute="height" secondItem="J3B-6k-qVe" secondAttribute="height" id="KiA-Dr-UZl"/>
                             <constraint firstItem="qmo-bB-fN9" firstAttribute="top" secondItem="raz-w5-jL8" secondAttribute="bottom" constant="-60" id="Mgz-Qu-8xh"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="top" secondItem="aoC-MP-LGF" secondAttribute="topMargin" constant="-39" id="Umh-tE-OSW"/>
+                            <constraint firstItem="Nrg-ot-67f" firstAttribute="centerX" secondItem="J3B-6k-qVe" secondAttribute="centerX" id="W2t-jz-bxQ"/>
+                            <constraint firstItem="Nrg-ot-67f" firstAttribute="centerY" secondItem="J3B-6k-qVe" secondAttribute="centerY" id="bYY-N7-Drw"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="centerX" secondItem="qmo-bB-fN9" secondAttribute="centerX" id="c2e-Uo-k80"/>
                             <constraint firstItem="hwk-AS-VqN" firstAttribute="width" secondItem="aoC-MP-LGF" secondAttribute="width" id="g6y-xx-hY0"/>
+                            <constraint firstItem="Nrg-ot-67f" firstAttribute="width" secondItem="J3B-6k-qVe" secondAttribute="width" id="wl1-nC-khk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qmo-bB-fN9"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="Nrg-ot-67f" id="wbO-wi-adX"/>
                         <outlet property="navigationBar" destination="raz-w5-jL8" id="rUi-WC-Ndv"/>
                         <outlet property="tableView" destination="J3B-6k-qVe" id="ruA-R5-xcX"/>
                     </connections>
@@ -481,17 +489,24 @@
                                         <color key="textColor" red="0.17919013410000001" green="0.1058694877" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KTZ-CX-5gO">
+                                        <rect key="frame" x="15" y="349" width="384" height="532"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="z20-Wc-Nsa" firstAttribute="centerX" secondItem="Ssl-5Q-oyR" secondAttribute="centerX" id="00Q-se-CHp"/>
                                     <constraint firstItem="gv4-vn-Jon" firstAttribute="centerX" secondItem="Ssl-5Q-oyR" secondAttribute="centerX" id="26E-GE-7Ai"/>
+                                    <constraint firstItem="KTZ-CX-5gO" firstAttribute="width" secondItem="z20-Wc-Nsa" secondAttribute="width" id="7EB-8I-3ik"/>
                                     <constraint firstItem="GZU-ge-K3I" firstAttribute="centerX" secondItem="Ssl-5Q-oyR" secondAttribute="centerX" id="CXn-Y3-J3q"/>
                                     <constraint firstAttribute="bottom" secondItem="z20-Wc-Nsa" secondAttribute="bottom" constant="15" id="Cgz-Wd-yge"/>
                                     <constraint firstItem="GZU-ge-K3I" firstAttribute="width" secondItem="Ssl-5Q-oyR" secondAttribute="width" id="Fry-Qp-vPe"/>
                                     <constraint firstItem="dJ6-ul-e6F" firstAttribute="top" secondItem="GZU-ge-K3I" secondAttribute="bottom" constant="20" id="GM6-gO-LYG"/>
+                                    <constraint firstItem="KTZ-CX-5gO" firstAttribute="centerY" secondItem="z20-Wc-Nsa" secondAttribute="centerY" id="QpL-Nd-q6W"/>
                                     <constraint firstItem="dJ6-ul-e6F" firstAttribute="width" secondItem="Ssl-5Q-oyR" secondAttribute="width" multiplier="3:4" id="SBE-qx-gc7"/>
+                                    <constraint firstItem="KTZ-CX-5gO" firstAttribute="height" secondItem="z20-Wc-Nsa" secondAttribute="height" id="aIx-ft-Y8a"/>
                                     <constraint firstItem="z20-Wc-Nsa" firstAttribute="leading" secondItem="Ssl-5Q-oyR" secondAttribute="leading" constant="15" id="bKu-9c-Ewn"/>
+                                    <constraint firstItem="KTZ-CX-5gO" firstAttribute="centerX" secondItem="z20-Wc-Nsa" secondAttribute="centerX" id="eFD-OA-MN3"/>
                                     <constraint firstItem="gv4-vn-Jon" firstAttribute="width" secondItem="dJ6-ul-e6F" secondAttribute="width" id="eyY-jo-BTr"/>
                                     <constraint firstItem="z20-Wc-Nsa" firstAttribute="top" secondItem="gv4-vn-Jon" secondAttribute="bottom" constant="20" id="oYH-Wk-7UJ"/>
                                     <constraint firstAttribute="trailing" secondItem="z20-Wc-Nsa" secondAttribute="trailing" constant="15" id="pgo-X8-lHM"/>
@@ -511,6 +526,7 @@
                         <viewLayoutGuide key="safeArea" id="b3g-5H-WMU"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="KTZ-CX-5gO" id="4pz-Fc-ZWH"/>
                         <outlet property="bodyLabel" destination="gv4-vn-Jon" id="1xF-Gf-CLT"/>
                         <outlet property="navigationBar" destination="GZU-ge-K3I" id="L9N-dx-s73"/>
                         <outlet property="tableView" destination="z20-Wc-Nsa" id="UM7-C9-c4b"/>

@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User : NSManagedObject
 
-@property(strong,nonatomic) NSString *password,*email;
-@property BOOL switchBOOL;
+@property(strong,nonatomic) NSString *password,*email,*imageDefults;
+
 
 
 

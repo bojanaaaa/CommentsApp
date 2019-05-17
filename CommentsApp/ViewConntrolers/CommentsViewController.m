@@ -25,19 +25,17 @@
 
 @implementation CommentsViewController
 
-@synthesize navigationBar,comment,commentsArray,post,tableView,titleLabel,bodyLabel;
+@synthesize navigationBar,comment,commentsArray,post,tableView,titleLabel,bodyLabel,activityIndicatorView,myCurrentUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     navigationBar.delegate=self;
-    tableView.delegate=self;
-    tableView.dataSource=self;
+    
     titleLabel.text=post.title;
     bodyLabel.text=post.body;
-    
-    
      // Do any additional setup after loading the view.
 }
+
 - (void)viewWillAppear:(BOOL)animated{
     
     navigationBar.beckButton.hidden=NO;
@@ -45,8 +43,19 @@
     navigationBar.nameLabel.text=@"COMMENTS";
     navigationBar.photoSwitch.hidden=YES;
     
+    [self.activityIndicatorView startAnimating];
+    [[CommentsManager sharedManager]formCommentsArray:post.postID];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopIndicator) name:@"newarray" object:nil];
     
 }
+-(void)stopIndicator{
+    commentsArray=[CommentsManager sharedManager].postcommentsArray;
+    [self.activityIndicatorView stopAnimating];
+    activityIndicatorView.hidesWhenStopped=YES;
+    tableView.delegate=self;
+    tableView.dataSource=self;
+}
+
 - (void)backButtonDelegate:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -96,6 +105,7 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SingleCommentViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"SingleCommentViewController"];
     cartController.comment=commentAtRow;
+    cartController.myCurrentUser=myCurrentUser;
     cartController.mainPost=post;
     cartController.index=indexPath.row;
     [self.navigationController pushViewController:cartController animated:YES];

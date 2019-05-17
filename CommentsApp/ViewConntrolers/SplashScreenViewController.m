@@ -24,11 +24,13 @@
 @synthesize commentsAppLabel;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setLabel];
     [[UserManager sharedManager]initUserManager];
     //[[UserManager sharedManager]initUserManager];
     // Do any additional setup after loading the view.
     [self initPostsManager];
+    
     }
 -(void)setLabel{
     [commentsAppLabel setTransform:CGAffineTransformMakeRotation(M_PI / 2)];

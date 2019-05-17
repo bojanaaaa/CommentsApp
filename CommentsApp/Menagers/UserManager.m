@@ -42,6 +42,8 @@
     NSManagedObject *object=[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     [object setValue:email forKey:@"email"];
     [object setValue:password forKey:@"password"];
+    NSString *str=@"YES";
+    [object setValue:str forKey:@"imageDefults"];
     /*NSString *str=@"YES";
     [object setValue:str forKey:@"switchBOOL"];*/
     
@@ -58,6 +60,7 @@
         NSLog(@"email %@",user.email);
     }
 }
+
 -(BOOL)checkForEmail:(NSString*)email{
     
     NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"User"];
@@ -75,6 +78,39 @@
     
     return true;
     
+}
+-(void)changeUsersImageDefults:(User *)user with:(BOOL)setBool{
+    
+    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"User"];
+    request.returnsObjectsAsFaults=false;
+    
+    NSPredicate *predicate= [NSPredicate predicateWithFormat:@"email == %@",user.email];
+    [request setPredicate:predicate];
+    
+    NSError *error=nil;
+    NSArray *results= [context executeFetchRequest:request error:&error];
+    for(User *us in results)
+    {
+        if (setBool) {
+            us.imageDefults=@"NO";
+        }
+        else us.imageDefults=@"YES";
+            
+  }
+    
+    
+}
+-(BOOL)chackUsersImageDefults:(User *)user{
+   
+    BOOL chack;
+    if([user.imageDefults isEqualToString:@"YES"])
+    {
+        chack=YES;
+    }
+    else chack=NO;
+    NSLog(@"%@",user.email);
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"show" object:nil];
+    return chack;
 }
 
 -(User *)returnUser:(NSString*)email{

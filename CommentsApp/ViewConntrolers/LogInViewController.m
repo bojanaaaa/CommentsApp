@@ -13,6 +13,7 @@
 #import "CommentsViewController.h"
 #import "UserManager.h"
 #import "Konstante.h"
+#import "SingleCommentViewController.h"
 @interface LogInViewController ()
 
 @end
@@ -25,7 +26,7 @@
     User *user;
     
 }
-@synthesize commentsAppLabel,emailTextField,passwordTextField,rememberMeLabel,somethingWentWrongLabel,checkImage,signUpLabel,commentsAppTop,scrollView,scrollViewBottom;
+@synthesize commentsAppLabel,emailTextField,passwordTextField,rememberMeLabel,somethingWentWrongLabel,checkImage,signUpLabel,commentsAppTop,scrollView,scrollViewBottom,myCurrentUser;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,8 +54,8 @@
     passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
     email=[NSString new];
     password=[NSString new];
-    email=@"nekoje";
-    password=@"nekoje";
+    //email=@"nekoje";
+    //password=@"nekoje";
    
     
     /*if ( IS_IPHONE_5)
@@ -88,11 +89,7 @@
         user.email=emailTextField.text;
         user.password=passwordTextField.text;
         
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        CommentsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"CommentsViewController"];
-        
-        //cartController.user = user;
-        
+
        // [self.navigationController pushViewController:cartController animated:YES];
     }
     else {
@@ -205,10 +202,15 @@
         
         if(user.password==passwordTextField.text)
         {
+            myCurrentUser=user;
+            
             emailTextField.text=@"";
             passwordTextField.text=@"";
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
+            
+            cartController.myCurrentUser = user;
+
             //cartController.user = user;
             NSLog(@"user %@",user.email);
             passwordTextField.text=@"";

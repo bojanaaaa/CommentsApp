@@ -23,8 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
 
-@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) User *user,*myCurrentUser;
+
 @property(strong, nonatomic) NSMutableArray *postsArray;
+
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 
 @end

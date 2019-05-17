@@ -10,6 +10,7 @@
 #import "NavigationBar.h"
 #import "Comment.h"
 #import "Post.h"
+#import "User.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong,nonatomic) Comment *comment;
 @property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
 @property (strong, nonatomic) IBOutlet Post  *mainPost;
+@property(strong,nonatomic) User *myCurrentUser;
 @property NSInteger index;
 
 @end

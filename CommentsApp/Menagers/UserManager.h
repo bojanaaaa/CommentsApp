@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)setUser:(NSString *)email and:(NSString *)password;
 -(BOOL)checkForEmail:(NSString*)email;
 -(User *)returnUser:(NSString*)email;
+-(void)changeUsersImageDefults:(User *)user with:(BOOL)setBool;
+-(BOOL)chackUsersImageDefults:(User *)user;
+
 
 @end
 

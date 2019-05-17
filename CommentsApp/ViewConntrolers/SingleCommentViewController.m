@@ -19,18 +19,23 @@
 #import "PostsManager.h"
 #import "TableViewCell.h"
 #import "NavigationBar.h"
+#import "LogInViewController.h"
+#import "UserManager.h"
 
 @interface SingleCommentViewController ()
 
 @end
 
-@implementation SingleCommentViewController
-@synthesize bodyLabel,nameLabel,emailLabel,imageNameLabel,imageView,comment,navigationBar,mainPost,index;
+@implementation SingleCommentViewController{
+    
+    BOOL willIShowImage;
+}
+@synthesize bodyLabel,nameLabel,emailLabel,imageNameLabel,imageView,comment,navigationBar,mainPost,index,myCurrentUser;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     navigationBar.delegate=self;
     bodyLabel.text=comment.body;
     emailLabel.text=comment.email;
@@ -46,13 +51,30 @@
     NSString *imgString=photo.url;
     NSData *data= [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imgString]];
     imageView.image= [UIImage imageWithData:data];
+    
+    willIShowImage=[[UserManager sharedManager]chackUsersImageDefults:myCurrentUser];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willIShowImage) name:@"show" object:nil];
     // Do any additional setup after loading the view.
+    if(willIShowImage)
+        imageView.hidden=NO;
+    else imageView.hidden=YES;
+     NSLog(@"ufunkciji %d",willIShowImage);
+    
 }
+/*- (void)willIShowImage{
+    NSLog(@"ufunkciji %d",willIShowImage);
+
+    if(willIShowImage)
+        imageView.hidden=NO;
+    else imageView.hidden=YES;
+    
+}*/
 - (void)viewWillAppear:(BOOL)animated{
     
     navigationBar.beckButton.hidden=NO;
     navigationBar.logOutButton.hidden=YES;
     navigationBar.nameLabel.text=@"COMMENT";
+    
    
 }
 
@@ -61,12 +83,13 @@
 }
 
 - (void)photoSwitchDelegate:(id)sender{
+    if(navigationBar.photoSwitch.isOn)
+    {imageView.hidden=NO;
+        [[UserManager sharedManager]changeUsersImageDefults:myCurrentUser with:NO];}
     
-    if(imageView.hidden==YES)
-        imageView.hidden=NO;
-    
-    if(imageView.hidden==NO)
-        imageView.hidden=YES;
+    else
+    {imageView.hidden=YES;
+        [[UserManager sharedManager]changeUsersImageDefults:myCurrentUser with:YES];}
     
 }
 /*

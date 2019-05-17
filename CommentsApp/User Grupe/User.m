@@ -10,6 +10,7 @@
 
 @implementation User
 
-@dynamic email,password,switchBOOL;
+@dynamic email,password,imageDefults;
+
 
 @end
