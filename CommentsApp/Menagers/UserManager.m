@@ -79,6 +79,7 @@
     return true;
     
 }
+
 -(void)changeUsersImageDefults:(User *)user with:(BOOL)setBool{
     
     NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"User"];
@@ -89,15 +90,12 @@
     
     NSError *error=nil;
     NSArray *results= [context executeFetchRequest:request error:&error];
-    for(User *us in results)
-    {
-        if (setBool) {
-            us.imageDefults=@"NO";
-        }
-        else us.imageDefults=@"YES";
-            
-  }
+    NSManagedObject *object= [results objectAtIndex:0];
     
+        if (setBool) {
+            [object setValue:@"NO" forKey:@"imageDefults"];
+        }
+        else [object setValue:@"YES" forKey:@"imageDefults"];
     
 }
 -(BOOL)chackUsersImageDefults:(User *)user{

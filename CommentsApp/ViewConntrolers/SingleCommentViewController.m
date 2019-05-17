@@ -27,7 +27,8 @@
 @end
 
 @implementation SingleCommentViewController{
-    
+    UIColor *thumbOnColor;
+    UIColor *thumbOffColor;
     BOOL willIShowImage;
 }
 @synthesize bodyLabel,nameLabel,emailLabel,imageNameLabel,imageView,comment,navigationBar,mainPost,index,myCurrentUser;
@@ -41,7 +42,8 @@
     emailLabel.text=comment.email;
     nameLabel.text=comment.name;
     
-   
+    
+    
     NSMutableArray *photos=[PhotoManager sharedManager].photoArray;
     Photo *photo=[Photo new];
     photo=photos[index];
@@ -70,6 +72,10 @@
     
 }*/
 - (void)viewWillAppear:(BOOL)animated{
+    
+    if([myCurrentUser.imageDefults isEqualToString:@"YES"])
+        [navigationBar.photoSwitch setOn:YES animated:YES];
+    else [navigationBar.photoSwitch setOn:NO animated:NO];
     
     navigationBar.beckButton.hidden=NO;
     navigationBar.logOutButton.hidden=YES;

@@ -219,7 +219,7 @@
             [self.navigationController pushViewController:cartController animated:YES];
         }
         else
-            somethingWentWrongLabel.text=@"Password is incorect!";
+            somethingWentWrongLabel.text=@"Pasword is incorect!";
     }
     else
     {   emailTextField.text=@"";

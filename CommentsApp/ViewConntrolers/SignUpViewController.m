@@ -111,6 +111,8 @@
             
             passwordTextField.text=@"";
             passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+            confirmedPasswordTextField.text=@"";
+            confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
             return;
         }
         

@@ -86,7 +86,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                                 <connections>
                                                     <action selector="emailEditingDidEnd:" destination="Vc3-sw-k3B" eventType="editingDidEnd" id="3Jl-wX-DyG"/>
                                                     <action selector="textFieldDidStartEditing:" destination="Vc3-sw-k3B" eventType="editingDidBegin" id="o4v-GL-lIs"/>
@@ -260,7 +260,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                                 <connections>
                                                     <action selector="emailEditingDidBegin:" destination="LZJ-Bo-HxZ" eventType="editingDidBegin" id="3Bv-h1-5wv"/>
                                                     <action selector="emailEditingDidEnd:" destination="LZJ-Bo-HxZ" eventType="editingDidEnd" id="cyH-0u-NUc"/>
