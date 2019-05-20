@@ -258,7 +258,7 @@
     CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
     
     if (keyboardFrameEnd.size.height > 0) {
-        scrollViewBottom.constant = keyboardFrameEnd.size.height + 10;
+        scrollViewBottom.constant = keyboardFrameEnd.size.height + 20;
         [scrollView setContentOffset:CGPointMake(0, emailTextField.frame.origin.y)];
         
     }

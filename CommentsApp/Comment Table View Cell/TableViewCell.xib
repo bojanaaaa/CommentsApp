@@ -31,7 +31,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="jOA-O0-7Eq">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images-2" translatesAutoresizingMaskIntoConstraints="NO" id="jOA-O0-7Eq">
                         <rect key="frame" x="266.5" y="-0.5" width="53.5" height="44.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
@@ -64,6 +64,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="images" width="225" height="225"/>
+        <image name="images-2" width="225" height="224"/>
     </resources>
 </document>

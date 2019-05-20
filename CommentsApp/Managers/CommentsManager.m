@@ -79,6 +79,7 @@
 {
     postcommentsArray=[NSMutableArray new];
     NSString *str=@"https://jsonplaceholder.typicode.com/comments?postId=";
+    //NSString *url = [NSString stringWithFormat:@"https://jsonplaceholder.typicode.com/comments?postId=%i", [postID intValue]];
     NSString *str2=[postID stringValue];
     str=[str stringByAppendingString:str2];
     

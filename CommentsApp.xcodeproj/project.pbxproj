@@ -157,7 +157,7 @@
 			path = "User Grupe";
 			sourceTree = "<group>";
 		};
-		3F3E76DB22862DFE00D29F5B /* Menagers */ = {
+		3F3E76DB22862DFE00D29F5B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				3F3E76F1228943A600D29F5B /* PostsManager.h */,
@@ -171,7 +171,7 @@
 				3F61BC2A2289808B0014C387 /* UserManager.h */,
 				3F61BC2B2289808B0014C387 /* UserManager.m */,
 			);
-			path = Menagers;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		3F3E76E52286329200D29F5B /* Prefix */ = {
@@ -183,7 +183,7 @@
 			path = Prefix;
 			sourceTree = "<group>";
 		};
-		3F4B4C8222858BA900290858 /* ViewConntrolers */ = {
+		3F4B4C8222858BA900290858 /* ViewControlers */ = {
 			isa = PBXGroup;
 			children = (
 				3F4B4C8322858C0A00290858 /* MainViewController.h */,
@@ -201,7 +201,7 @@
 				3F61BC0D228966370014C387 /* PostsViewController.h */,
 				3F61BC0E228966370014C387 /* PostsViewController.m */,
 			);
-			path = ViewConntrolers;
+			path = ViewControlers;
 			sourceTree = "<group>";
 		};
 		3F4B4C9822858FF000290858 /* NavigationBar */ = {
@@ -241,11 +241,11 @@
 			children = (
 				3F61BC1422896E8E0014C387 /* Objects */,
 				3F3E76E52286329200D29F5B /* Prefix */,
-				3F3E76DB22862DFE00D29F5B /* Menagers */,
+				3F3E76DB22862DFE00D29F5B /* Managers */,
 				3F3E76D722862C7800D29F5B /* User Grupe */,
 				3F4B4C9822858FF000290858 /* NavigationBar */,
 				3F61BC432289A7F10014C387 /* Comment Table View Cell */,
-				3F4B4C8222858BA900290858 /* ViewConntrolers */,
+				3F4B4C8222858BA900290858 /* ViewControlers */,
 				3F607B0522858619000318FF /* AppDelegate.h */,
 				3F607B0622858619000318FF /* AppDelegate.m */,
 				3F607B0822858619000318FF /* ViewController.h */,

@@ -34,6 +34,9 @@
     titleLabel.text=post.title;
     bodyLabel.text=post.body;
      // Do any additional setup after loading the view.
+    
+    tableView.delegate=self;
+    tableView.dataSource=self;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -52,8 +55,8 @@
     commentsArray=[CommentsManager sharedManager].postcommentsArray;
     [self.activityIndicatorView stopAnimating];
     activityIndicatorView.hidesWhenStopped=YES;
-    tableView.delegate=self;
-    tableView.dataSource=self;
+    
+    [tableView reloadData];
 }
 
 - (void)backButtonDelegate:(id)sender{

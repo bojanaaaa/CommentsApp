@@ -64,7 +64,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="yfi-Rd-H2k">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" maximumZoomScale="2" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="yfi-Rd-H2k">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-Tc-T4Y">
