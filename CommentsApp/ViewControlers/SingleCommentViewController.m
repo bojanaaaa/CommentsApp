@@ -21,6 +21,7 @@
 #import "NavigationBar.h"
 #import "LogInViewController.h"
 #import "UserManager.h"
+#import "Konstante.h"
 
 @interface SingleCommentViewController ()
 
@@ -31,7 +32,7 @@
     UIColor *thumbOffColor;
     BOOL willIShowImage;
 }
-@synthesize bodyLabel,nameLabel,emailLabel,imageNameLabel,imageView,comment,navigationBar,mainPost,index,myCurrentUser;
+@synthesize bodyLabel,nameLabel,emailLabel,imageNameLabel,imageView,comment,navigationBar,mainPost,index,myCurrentUser,namaLabelConstraint;
 
 
 - (void)viewDidLoad {
@@ -80,6 +81,11 @@
     navigationBar.beckButton.hidden=NO;
     navigationBar.logOutButton.hidden=YES;
     navigationBar.nameLabel.text=@"COMMENT";
+    if (IS_IPHONE_5)
+    {
+        namaLabelConstraint.constant=10;
+    }
+    
     
    
 }

@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet NavigationBar *navigationBar;
 @property (strong, nonatomic) IBOutlet Post  *mainPost;
 @property(strong,nonatomic) User *myCurrentUser;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *namaLabelConstraint;
+
 @property NSInteger index;
 
 @end

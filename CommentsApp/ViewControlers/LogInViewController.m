@@ -67,13 +67,13 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     if (IS_IPHONE_5)
-    {commentsAppTop.constant=225;
+    {commentsAppTop.constant=100;
         NSLog(@"radim");
     }
     
     
     if (IS_IPHONE_6)
-        commentsAppTop.constant=225;
+        commentsAppTop.constant=100;
     rememberMe=[self rememberMe];
     
     if (rememberMe)
@@ -259,7 +259,7 @@
     
     if (keyboardFrameEnd.size.height > 0) {
         scrollViewBottom.constant = keyboardFrameEnd.size.height + 20;
-        [scrollView setContentOffset:CGPointMake(0, emailTextField.frame.origin.y)];
+        //[scrollView setContentOffset:CGPointMake(0, emailTextField.frame.origin.y)];
         
     }
     

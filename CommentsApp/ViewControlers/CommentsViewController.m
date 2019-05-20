@@ -37,6 +37,7 @@
     
     tableView.delegate=self;
     tableView.dataSource=self;
+    tableView.hidden=YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -55,7 +56,7 @@
     commentsArray=[CommentsManager sharedManager].postcommentsArray;
     [self.activityIndicatorView stopAnimating];
     activityIndicatorView.hidesWhenStopped=YES;
-    
+    tableView.hidden=NO;
     [tableView reloadData];
 }
 
@@ -75,6 +76,8 @@
     
     cell.label1.text=comment.name;
     cell.label2.text=comment.email;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     
     return cell;
 }

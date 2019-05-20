@@ -45,6 +45,7 @@
     
     NSLog(@"view will appear");
 }
+
 - (void)logOutButtonDelegate:(id)sender{
     
     UIAlertController * alert = [UIAlertController
@@ -103,6 +104,8 @@
     
     cell.label1.text=post.title;
     cell.label2.text=post.body;
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

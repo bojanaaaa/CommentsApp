@@ -34,13 +34,13 @@
     [self SetTextFieldBorder:passwordTextField];
     [self SetTextFieldBorder:confirmedPasswordTextField];
     if (IS_IPHONE_5)
-    {commentsAppTop.constant=225;
+    {commentsAppTop.constant=100;
         NSLog(@"radim");
     }
     
     
     if (IS_IPHONE_6)
-        commentsAppTop.constant=225;
+        commentsAppTop.constant=100;
     
    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];

@@ -42,11 +42,11 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoJ-5t-cle">
                     <rect key="frame" x="81.5" y="0.0" width="245" height="60"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.17919013410000001" green="0.1058694877" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.12607332339999999" green="0.66453680479999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="highlightedColor" red="0.17919013410000001" green="0.1058694877" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHa-Rl-38S">
-                    <rect key="frame" x="354" y="14.5" width="51" height="31"/>
+                    <rect key="frame" x="326.5" y="14.5" width="51" height="31"/>
                     <connections>
                         <action selector="photoSwitch:" destination="-1" eventType="valueChanged" id="O8y-Jc-9LF"/>
                     </connections>
@@ -57,7 +57,7 @@
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="2uq-Hf-jcc"/>
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="height" secondItem="Or8-vW-Txw" secondAttribute="height" id="65T-hA-QG5"/>
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FgF-VX-Ich"/>
-                <constraint firstItem="zHa-Rl-38S" firstAttribute="leading" secondItem="PoJ-5t-cle" secondAttribute="trailing" constant="27.5" id="GRL-8B-IHb"/>
+                <constraint firstItem="zHa-Rl-38S" firstAttribute="leading" secondItem="PoJ-5t-cle" secondAttribute="trailing" id="GRL-8B-IHb"/>
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qag-oE-O7o"/>
                 <constraint firstItem="zHa-Rl-38S" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="U6I-Oa-tzP"/>
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dbR-al-mWl"/>
