@@ -41,19 +41,28 @@
     navigationBar.nameLabel.text=@"POSTS";
     navigationBar.photoSwitch.hidden=YES;
     navigationBar.addPost.hidden=NO;
-    //tableView.hidden=YES;
-    //[self.activityIndicatorView startAnimating];
-    postsArray=[PostsManager sharedManager].postsArray;
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopIndicator) name:@"newarray" object:nil];
-    
+    tableView.hidden=YES;
+    [self.activityIndicatorView startAnimating];
+    [[PostsManager sharedManager]initManager];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeArray) name:@"newPostsArray" object:nil];
 }
--(void)stopIndicator{
+
+-(void)makeArray{
+    
+      postsArray=[PostsManager sharedManager].postsArray;
+      [self.activityIndicatorView stopAnimating];
+      activityIndicatorView.hidesWhenStopped=YES;
+      if([postsArray count])
+      {tableView.hidden=NO;
+        [tableView reloadData];}
+}
+/*-(void)stopIndicator{
     [self.activityIndicatorView stopAnimating];
     activityIndicatorView.hidesWhenStopped=YES;
     if([postsArray count])
     {tableView.hidden=NO;
         [tableView reloadData];}
-}
+}*/
 
 
 - (void)addPostDelegate:(id)sender{

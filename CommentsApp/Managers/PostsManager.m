@@ -68,12 +68,73 @@
         [postsArray addObject:a];
         
     }
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"newPostsArray" object:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"finishedLoadingPosts" object:nil];
 }
 -(void)addPost:(Post*)newPost{
+ 
+    NSDictionary *param = @{@"userId":newPost.userID,
+                            
+                            @"id":newPost.postID,
+                            
+                            @"title":newPost.title,
+                            
+                            @"body":newPost.body
+                            
+                            };
     
-     
+    NSLog(@"param:%@",param);
+    
+  
+    
+    
+    NSString *finalurl=[NSString stringWithFormat:@"https://jsonplaceholder.typicode.com/posts/"];
+    NSURL *nsurl=[NSURL URLWithString:finalurl];
+    NSMutableURLRequest *nsrequest=[NSMutableURLRequest requestWithURL:nsurl];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:param options:0 error:nil];
+    
+    [nsrequest setHTTPBody:data];
+    
+    //Here YOUR URL
+    /*NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://jsonplaceholder.typicode.com/posts"]];
+    
+    
+    //create the Method "GET" or "POST"
+    [request setHTTPMethod:@"POST"];
+    
+    //Pass The String to server(YOU SHOULD GIVE YOUR PARAMETERS INSTEAD OF MY PARAMETERS)
+    NSString *userUpdate =[NSString stringWithFormat:@"userId=%@&id=%@&title=%@&  body=%@&",newPost.userID,newPost.postID,newPost.title,newPost.body];
+    
+    
+    
+    //Check The Value what we passed
+    NSLog(@"the data Details is =%@", userUpdate);
+    
+    //Convert the String to Data
+    NSData *data1 = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
+    
+    //Apply the data to the body
+    [request setHTTPBody:data1];
+    
+    //Create the response and Error
+    NSError *err;
+    NSURLResponse *response;
+    
+    NSData *responseData = [NSJSONSerialization dataWithJSONObject:param options:0 error:nil];
+    NSString *resSrt = [[NSString alloc]initWithData:responseData encoding:NSASCIIStringEncoding];
+    
+    //This is for Response
+    NSLog(@"got response==%@", resSrt);
+    if(resSrt)
+    {
+        NSLog(@"got response");
+    
+    }
+    else
+    {
+        NSLog(@"faield to connect");
+    }
+    */
      [[NSNotificationCenter defaultCenter] postNotificationName:@"newarray" object:nil];
 }
 
