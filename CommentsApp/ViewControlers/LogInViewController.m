@@ -68,7 +68,7 @@
     
     if (IS_IPHONE_5)
     {commentsAppTop.constant=100;
-        NSLog(@"radim");
+        
     }
     
     
@@ -123,6 +123,22 @@
 - (IBAction)passwordEditingEnd:(id)sender {
     passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if(textField==emailTextField)
+    {
+        [passwordTextField becomeFirstResponder];
+    }
+    
+    else
+    {
+        [self logIn];
+    }
+    
+    return YES;
+}
+
+
 
 -(BOOL)rememberMe
 {
@@ -155,6 +171,7 @@
     {   rememberMeLabel.textColor=[UIColor grayColor];
         
         checkImage.image = [UIImage imageNamed: @"check_unactive"];
+        
     }
     
     NSUserDefaults *def= [NSUserDefaults standardUserDefaults];
@@ -164,43 +181,55 @@
 }
 
 - (IBAction)logInButton:(id)sender {
+   
+    [self logIn];
+    
+}
+-(void)logIn {
     
     User *user;
     
     if ( [emailTextField.text length]==0 )
         
-        emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail is reqired!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
+    {
+        emailTextField.placeholder=@"";
+        emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail is reqired!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];}
+    
     
     if ( [passwordTextField.text length]==0 )
-        passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password is reqired!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
-
-    
-   /* if ([emailTextField.text isEqualToString: email]){
-    if ( [passwordTextField.text isEqualToString: password] )
         
     {
-        
-        user.email=emailTextField.text;
-        user.password=passwordTextField.text;
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
-        //cartController.user = user;
-        
-        
-        [self.navigationController pushViewController:cartController animated:YES];
-        
-    }
-        
-    else  {
-        
-        passwordTextField.text=@"";
-        passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Incorect" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];}
-    }*/
+        passwordTextField.placeholder=@"";
+        passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password is reqired!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];}
     
-    if((user=[[UserManager sharedManager]returnUser:emailTextField.text])){
-        
-        if(user.password==passwordTextField.text)
+    
+    /* if ([emailTextField.text isEqualToString: email]){
+     if ( [passwordTextField.text isEqualToString: password] )
+     
+     {
+     
+     user.email=emailTextField.text;
+     user.password=passwordTextField.text;
+     
+     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+     PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
+     //cartController.user = user;
+     
+     
+     [self.navigationController pushViewController:cartController animated:YES];
+     
+     }
+     
+     else  {
+     
+     passwordTextField.text=@"";
+     passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Incorect" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];}
+     }*/
+    
+    else if((user=[[UserManager sharedManager]returnUser:emailTextField.text])){
+        NSLog(@"log in %@", user.password);
+        NSLog(@"log in %@", passwordTextField.text);
+        if([user.password isEqualToString:passwordTextField.text])
         {
             myCurrentUser=user;
             
@@ -210,7 +239,7 @@
             PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
             
             cartController.myCurrentUser = user;
-
+            
             //cartController.user = user;
             NSLog(@"user %@",user.email);
             passwordTextField.text=@"";
@@ -226,6 +255,11 @@
         emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
         passwordTextField.text=@"";
         passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+        
+        NSUserDefaults *def= [NSUserDefaults standardUserDefaults];
+        [def setBool:NO forKey:@"rememberMe"];
+        [def synchronize];
+        
         somethingWentWrongLabel.text=@"No existing acount,please SIGN UP!";
     }
     

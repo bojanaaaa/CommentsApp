@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)backButtonDelegate:(id)sender;
 - (IBAction)logOutButtonDelegate:(id)sender;
 - (IBAction)photoSwitchDelegate:(id)sender;
+- (IBAction)addPostDelegate:(id)sender;
 
 @end
 
@@ -28,10 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)photoSwitch:(id)sender;
 - (IBAction)backButton:(id)sender;
 - (IBAction)logOutButton:(id)sender;
+- (IBAction)addPost:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *logOutButton;
 @property (strong, nonatomic) IBOutlet UIButton *beckButton;
 @property (strong, nonatomic) IBOutlet UISwitch *photoSwitch;
+@property (strong, nonatomic) IBOutlet UIButton *addPost;
 
 
 

@@ -35,7 +35,7 @@
     [self SetTextFieldBorder:confirmedPasswordTextField];
     if (IS_IPHONE_5)
     {commentsAppTop.constant=100;
-        NSLog(@"radim");
+      
     }
     
     
@@ -53,10 +53,10 @@
     
     confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
     
-    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Password must contain a minimum of 6 characters"]];
-    NSInteger i=[attrStr length];
-    [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0,i)];
-    somethingWentWrongLabel.attributedText = attrStr;
+    //NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Password must contain a minimum of 6 characters"]];
+    //NSInteger i=[attrStr length];
+   // [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0,i)];
+    //somethingWentWrongLabel.attributedText = attrStr;
     
     // Do any additional setup after loading the view.
 }
@@ -89,10 +89,27 @@
 - (IBAction)confirmationEditingDidEnd:(id)sender {
        confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if(textField==emailTextField)
+    {
+        [passwordTextField becomeFirstResponder];
+    }
+    
+    if(textField==passwordTextField)
+    {
+        [confirmedPasswordTextField becomeFirstResponder];
+    }
+    else
+    {
+        [self signUp];
+        
+    }
+    
+    return YES;
+}
 
-
-
-- (IBAction)signUpButton:(id)sender {
+-(void)signUp{
     
     if([emailTextField.text length]==0){
         
@@ -110,9 +127,9 @@
             emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail already exists!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
             
             passwordTextField.text=@"";
-            passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+            passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
             confirmedPasswordTextField.text=@"";
-            confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+            confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
             return;
         }
         
@@ -123,7 +140,7 @@
         passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password is reqired!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
         
     }
-    if ([passwordTextField.text length]<6){
+    else if ([passwordTextField.text length]<6){
         
         passwordTextField.text=@"";
         confirmedPasswordTextField.text=@"";
@@ -131,7 +148,8 @@
         NSInteger i=[attrStr length];
         [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,i)];
         somethingWentWrongLabel.attributedText = attrStr;
-        passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password is too short!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
+        passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+        confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
         
     }
     else if([confirmedPasswordTextField.text isEqualToString:passwordTextField.text])
@@ -149,6 +167,13 @@
         //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(next:) name:@"finished" object:nil];
     }
     
+    
+}
+
+
+- (IBAction)signUpButton:(id)sender {
+    
+    [self signUp];
 }
 
 - (IBAction)logInButton:(id)sender {

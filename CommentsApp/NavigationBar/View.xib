@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBar">
             <connections>
+                <outlet property="addPost" destination="TRt-AZ-ruC" id="Vrq-qh-PcD"/>
                 <outlet property="beckButton" destination="yAq-ki-2DT" id="yBN-zM-Csx"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="V1k-FT-wV8"/>
                 <outlet property="logOutButton" destination="Or8-vW-Txw" id="tWd-8R-8zd"/>
@@ -23,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="408" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or8-vW-Txw">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or8-vW-Txw">
                     <rect key="frame" x="0.0" y="0.0" width="81.5" height="60"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="LogOut"/>
@@ -51,18 +52,30 @@
                         <action selector="photoSwitch:" destination="-1" eventType="valueChanged" id="O8y-Jc-9LF"/>
                     </connections>
                 </switch>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRt-AZ-ruC">
+                    <rect key="frame" x="326.5" y="0.0" width="81.5" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="addPost:" destination="-1" eventType="touchUpInside" id="XsF-gW-GgW"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="TRt-AZ-ruC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="1Cn-hs-56K"/>
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="2uq-Hf-jcc"/>
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="height" secondItem="Or8-vW-Txw" secondAttribute="height" id="65T-hA-QG5"/>
+                <constraint firstItem="TRt-AZ-ruC" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:5" id="8Be-l4-YB4"/>
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FgF-VX-Ich"/>
                 <constraint firstItem="zHa-Rl-38S" firstAttribute="leading" secondItem="PoJ-5t-cle" secondAttribute="trailing" id="GRL-8B-IHb"/>
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qag-oE-O7o"/>
                 <constraint firstItem="zHa-Rl-38S" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="U6I-Oa-tzP"/>
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dbR-al-mWl"/>
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="leading" secondItem="Or8-vW-Txw" secondAttribute="leading" id="e6A-vX-Why"/>
+                <constraint firstItem="TRt-AZ-ruC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fgN-gH-eSm"/>
                 <constraint firstItem="PoJ-5t-cle" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="3:5" id="gLc-8Y-PGh"/>
+                <constraint firstItem="TRt-AZ-ruC" firstAttribute="leading" secondItem="PoJ-5t-cle" secondAttribute="trailing" id="j3h-Kr-oQa"/>
                 <constraint firstItem="PoJ-5t-cle" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="kmb-2q-TUC"/>
                 <constraint firstItem="PoJ-5t-cle" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="niu-rq-J8b"/>
                 <constraint firstItem="PoJ-5t-cle" firstAttribute="leading" secondItem="yAq-ki-2DT" secondAttribute="trailing" id="shb-IC-Bj3"/>

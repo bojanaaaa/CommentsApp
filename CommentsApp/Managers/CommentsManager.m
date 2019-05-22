@@ -82,10 +82,6 @@
     //NSString *url = [NSString stringWithFormat:@"https://jsonplaceholder.typicode.com/comments?postId=%i", [postID intValue]];
     NSString *str2=[postID stringValue];
     str=[str stringByAppendingString:str2];
-    
-    
-    NSLog(@"comments: tu sam ");
-    
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:str
@@ -99,8 +95,6 @@
           NSLog(@"Error: %@", error);
           
       }];
-    
-    NSLog(@"ovde sam %li",(long)[postcommentsArray count]);
   
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(next:) name:@"finishedLoadingComments" object:nil];
     /*for (Comment *comment in commentsArray)

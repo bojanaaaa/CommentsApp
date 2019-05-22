@@ -81,6 +81,7 @@
     navigationBar.beckButton.hidden=NO;
     navigationBar.logOutButton.hidden=YES;
     navigationBar.nameLabel.text=@"COMMENT";
+    navigationBar.addPost.hidden=YES;
     if (IS_IPHONE_5)
     {
         namaLabelConstraint.constant=10;

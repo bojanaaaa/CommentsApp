@@ -14,6 +14,7 @@
 #import "CommentsViewController.h"
 #import "Comment.h"
 #import "CommentsManager.h"
+#import "AddPostViewController.h"
 @interface PostsViewController ()
 
 @end
@@ -28,7 +29,7 @@
     navigationBar.delegate=self;
     tableView.delegate=self;
     tableView.dataSource=self;
-    postsArray=[PostsManager sharedManager].postsArray;
+    
     activityIndicatorView.hidden=YES;
     // Do any additional setup after loading the view.
 }
@@ -39,13 +40,28 @@
     navigationBar.logOutButton.hidden=NO;
     navigationBar.nameLabel.text=@"POSTS";
     navigationBar.photoSwitch.hidden=YES;
+    navigationBar.addPost.hidden=NO;
+    //tableView.hidden=YES;
+    //[self.activityIndicatorView startAnimating];
+    postsArray=[PostsManager sharedManager].postsArray;
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopIndicator) name:@"newarray" object:nil];
     
-    
-    
-    
-    NSLog(@"view will appear");
+}
+-(void)stopIndicator{
+    [self.activityIndicatorView stopAnimating];
+    activityIndicatorView.hidesWhenStopped=YES;
+    if([postsArray count])
+    {tableView.hidden=NO;
+        [tableView reloadData];}
 }
 
+
+- (void)addPostDelegate:(id)sender{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AddPostViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"AddPostViewController"];
+    [self.navigationController pushViewController:cartController animated:YES];
+    
+}
 - (void)logOutButtonDelegate:(id)sender{
     
     UIAlertController * alert = [UIAlertController
@@ -82,6 +98,8 @@
     [alert addAction:noButton];
     
     [self presentViewController:alert animated:YES completion:nil];}
+
+
 /*
 #pragma mark - Navigation
 

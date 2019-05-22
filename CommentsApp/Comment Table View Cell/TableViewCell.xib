@@ -31,8 +31,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back" translatesAutoresizingMaskIntoConstraints="NO" id="jOA-O0-7Eq">
-                        <rect key="frame" x="266.5" y="17.5" width="53.5" height="8.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back-1" translatesAutoresizingMaskIntoConstraints="NO" id="jOA-O0-7Eq">
+                        <rect key="frame" x="266.5" y="18" width="53.5" height="7.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
@@ -53,7 +53,7 @@
                 </constraints>
             </tableViewCellContentView>
             <constraints>
-                <constraint firstItem="jOA-O0-7Eq" firstAttribute="height" secondItem="aW0-zy-SZf" secondAttribute="height" multiplier="1:5" id="iLM-Md-Z3t"/>
+                <constraint firstItem="jOA-O0-7Eq" firstAttribute="height" secondItem="aW0-zy-SZf" secondAttribute="height" multiplier="1:6" id="iLM-Md-Z3t"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
@@ -64,6 +64,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Back" width="13" height="21"/>
+        <image name="Back-1" width="13" height="21"/>
     </resources>
 </document>

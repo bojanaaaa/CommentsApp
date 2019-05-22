@@ -71,7 +71,11 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"finishedLoadingPosts" object:nil];
 }
-
+-(void)addPost:(Post*)newPost{
+    
+     
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"newarray" object:nil];
+}
 
 
 @end

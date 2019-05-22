@@ -73,6 +73,15 @@
     }
 }
 
+- (IBAction)addPost:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(addPostDelegate:)]) {
+        
+        [self.delegate addPostDelegate:self];
+    }
+
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -25,7 +25,7 @@
 
 @implementation CommentsViewController
 
-@synthesize navigationBar,comment,commentsArray,post,tableView,titleLabel,bodyLabel,activityIndicatorView,myCurrentUser;
+@synthesize navigationBar,comment,commentsArray,post,tableView,titleLabel,bodyLabel,activityIndicatorView,myCurrentUser,noCommentsLabel;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -46,6 +46,9 @@
     navigationBar.logOutButton.hidden=YES;
     navigationBar.nameLabel.text=@"COMMENTS";
     navigationBar.photoSwitch.hidden=YES;
+    navigationBar.addPost.hidden=YES;
+    noCommentsLabel.hidden=YES;
+
     
     [self.activityIndicatorView startAnimating];
     [[CommentsManager sharedManager]formCommentsArray:post.postID];
@@ -56,8 +59,12 @@
     commentsArray=[CommentsManager sharedManager].postcommentsArray;
     [self.activityIndicatorView stopAnimating];
     activityIndicatorView.hidesWhenStopped=YES;
-    tableView.hidden=NO;
-    [tableView reloadData];
+    if([commentsArray count])
+    {tableView.hidden=NO;
+        [tableView reloadData];}
+    else {
+        noCommentsLabel.hidden=NO;
+    }
 }
 
 - (void)backButtonDelegate:(id)sender{
