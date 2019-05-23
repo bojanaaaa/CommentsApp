@@ -29,7 +29,7 @@
     navigationBar.delegate=self;
     tableView.delegate=self;
     tableView.dataSource=self;
-    
+   
     activityIndicatorView.hidden=YES;
     // Do any additional setup after loading the view.
 }
@@ -41,21 +41,53 @@
     navigationBar.nameLabel.text=@"POSTS";
     navigationBar.photoSwitch.hidden=YES;
     navigationBar.addPost.hidden=NO;
-    tableView.hidden=YES;
-    [self.activityIndicatorView startAnimating];
+   // tableView.hidden=YES;
+    postsArray=[PostsManager sharedManager].postsArray;
+    
+    BOOL chack=NO;
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    chack=[def boolForKey:@"writenewpost"];
+    
+    if(chack==YES)
+    {
+        if([postsArray count])
+        {
+            [def setBool:NO forKey:@"writenewpost"];
+            postsArray=[PostsManager sharedManager].postsArray;
+            //tableView.hidden=NO;
+            [tableView reloadData];}
+        
+        }
+   /* [self.activityIndicatorView startAnimating];
     [[PostsManager sharedManager]initManager];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeArray) name:@"newPostsArray" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeArray) name:@"newPostsArray" object:nil];*/
 }
 
--(void)makeArray{
+/*-(void)makeArray{
     
       postsArray=[PostsManager sharedManager].postsArray;
+      BOOL chack;
+      Post * newPost=[Post new];
+      NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+      chack=[def boolForKey:@"writenewpost"];
+   if(chack==YES)
+   {
+      [def setBool:NO forKey:@"writenewpost"];
+      newPost.postID= [def objectForKey:@"id"];
+      newPost.userID=[def objectForKey:@"userId"];
+      newPost.title=[def objectForKey:@"title"];
+      newPost.body=[def objectForKey:@"body"];
+      [def synchronize];
+    
+      [postsArray addObject:newPost];
+   }
       [self.activityIndicatorView stopAnimating];
       activityIndicatorView.hidesWhenStopped=YES;
       if([postsArray count])
       {tableView.hidden=NO;
         [tableView reloadData];}
-}
+}*/
+
 /*-(void)stopIndicator{
     [self.activityIndicatorView stopAnimating];
     activityIndicatorView.hidesWhenStopped=YES;

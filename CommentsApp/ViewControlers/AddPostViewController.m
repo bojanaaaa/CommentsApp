@@ -27,11 +27,13 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopIndicator:) name:@"newarraypost" object:nil];
+    
     
     navigationBar.delegate=self;
     titleTextField.delegate=self;
     bodyTextView.delegate=self;
-    
+   // [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(limitTextField) name:UITextFieldTextDidChangeNotification object:nil];
     titleTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Title" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
     [self SetTextFieldBorder:titleTextField];
     
@@ -43,6 +45,21 @@
     [[self.bodyTextView layer] setCornerRadius:0];
     // Do any additional setup after loading the view.
 }
+/*-(void)limitTextField
+{
+    titleTextField.text = [titleTextField.text substringToIndex:60];
+}*/
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    // Prevent crashing undo bug – see note below.
+    if(range.length + range.location > titleTextField.text.length)
+    {
+        return NO;
+    }
+    
+    NSUInteger newLength = [titleTextField.text length] + [string length] - range.length;
+    return newLength <= 60;
+}
+
 -(void)textViewDidBeginEditing:(UITextView *)textView{
     
     bodyLabel.hidden=YES;
@@ -92,6 +109,8 @@
     
     return YES;
 }
+
+
 -(void) addPostCall:(Post *)newPost{
     
     NSArray *postsArray=[PostsManager sharedManager].postsArray;
@@ -122,22 +141,53 @@
     bodyTextView.hidden=YES;
     addPostButton.hidden=YES;
     bodyLabel.hidden=YES;
+        
+        BOOL chack=YES;
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        [def setBool:chack forKey:@"writenewpost"];
+       /* NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        [def setBool:chack forKey:@"writenewpost"];
+        [def setObject:newPost.postID forKey:@"id"];
+        [def setObject:newPost.userID forKey:@"userId"];
+        [def setObject:newPost.title forKey:@"title"];
+        [def setObject:newPost.body forKey:@"body"];
+        [def synchronize];*/
+        
     [self.activityIndicator startAnimating];
     [[PostsManager sharedManager]addPost:newPost];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopIndicator) name:@"newarray" object:nil];
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+       /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
-        [self.navigationController pushViewController:cartController animated:YES];
-        
+        [self.navigationController pushViewController:cartController animated:YES];*/
+       
     }
     
 }
--(void)stopIndicator{
+-(void)stopIndicator:(NSNotification *)notification {
     
-    [self.activityIndicator stopAnimating];
     activityIndicator.hidesWhenStopped=YES;
+    [self.activityIndicator stopAnimating];
+    
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Notification"
+                                 message:@"Post is created!"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+     
+     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+     PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
+     [self.navigationController pushViewController:cartController animated:YES];
+     
+                               }];
+    
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 

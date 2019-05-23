@@ -9,6 +9,7 @@
 #import "PostsManager.h"
 #import "AFNetworking.h"
 #import "Post.h"
+#import "SGHTTPRequest.h"
 @implementation PostsManager
 
 @synthesize postsArray;
@@ -72,70 +73,85 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"finishedLoadingPosts" object:nil];
 }
 -(void)addPost:(Post*)newPost{
- 
-    NSDictionary *param = @{@"userId":newPost.userID,
-                            
-                            @"id":newPost.postID,
-                            
-                            @"title":newPost.title,
-                            
-                            @"body":newPost.body
-                            
-                            };
-    
-    NSLog(@"param:%@",param);
-    
   
+    NSURL *url = [NSURL URLWithString:@"https://jsonplaceholder.typicode.com/posts"];
+    
+    // create a POST request
+    SGHTTPRequest *req = [SGHTTPRequest postRequestWithURL:url];
     
     
-    NSString *finalurl=[NSString stringWithFormat:@"https://jsonplaceholder.typicode.com/posts/"];
-    NSURL *nsurl=[NSURL URLWithString:finalurl];
-    NSMutableURLRequest *nsrequest=[NSMutableURLRequest requestWithURL:nsurl];
-    NSData *data = [NSJSONSerialization dataWithJSONObject:param options:0 error:nil];
+    // set the POST fields
+    req.parameters = @{@"id": newPost.postID,
+                       @"userId": newPost.userID,
+                       @"title": newPost.title,
+                       @"body": newPost.body
+                       };
     
-    [nsrequest setHTTPBody:data];
+    // optional success handler
+    req.onSuccess = ^(SGHTTPRequest *_req) {
+        NSLog(@"response:%@", _req.responseString);
+       
+
+        //NSDictionary *postinstring = [[NSDictionary alloc] initWithDictionary:]
+        
+        NSString *string = (NSString *)_req.parameters;
+        NSLog(@"%@",string);//   NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+     
+        
+         Post *a=[Post new];
+        a.userID=[_req.parameters objectForKey:@"userID"];
+        a.postID=[_req.parameters objectForKey:@"id"];
+        a.title=[_req.parameters objectForKey:@"title"];
+        a.body=[_req.parameters objectForKey:@"body"];
+        NSLog(@"%@",a.title);
+        [self->postsArray addObject:a];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"newarraypost" object:nil];
+        
+        
+    };
     
-    //Here YOUR URL
+    // optional failure handler
+    req.onFailure = ^(SGHTTPRequest *_req) {
+        NSLog(@"error:%@", _req.error);
+        NSLog(@"status code:%ld", (long)_req.statusCode);
+        
+    };
+    // start the request in the background
+    [req start];
+    
+   
+    
+    
+    
     /*NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://jsonplaceholder.typicode.com/posts"]];
     
-    
-    //create the Method "GET" or "POST"
     [request setHTTPMethod:@"POST"];
-    
-    //Pass The String to server(YOU SHOULD GIVE YOUR PARAMETERS INSTEAD OF MY PARAMETERS)
-    NSString *userUpdate =[NSString stringWithFormat:@"userId=%@&id=%@&title=%@&  body=%@&",newPost.userID,newPost.postID,newPost.title,newPost.body];
-    
-    
-    
-    //Check The Value what we passed
+    NSString *userUpdate =[NSString stringWithFormat:@"userId=%@&Id=%@&title=%@&body=%@&",newPost.userID,  newPost.postID,newPost.title,newPost.body];
     NSLog(@"the data Details is =%@", userUpdate);
-    
-    //Convert the String to Data
     NSData *data1 = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
-    
-    //Apply the data to the body
     [request setHTTPBody:data1];
-    
-    //Create the response and Error
     NSError *err;
     NSURLResponse *response;
     
-    NSData *responseData = [NSJSONSerialization dataWithJSONObject:param options:0 error:nil];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    
     NSString *resSrt = [[NSString alloc]initWithData:responseData encoding:NSASCIIStringEncoding];
     
-    //This is for Response
     NSLog(@"got response==%@", resSrt);
     if(resSrt)
     {
         NSLog(@"got response");
-    
+       Post *post=
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"newarraypost" object:nil];
     }
     else
     {
         NSLog(@"faield to connect");
-    }
-    */
-     [[NSNotificationCenter defaultCenter] postNotificationName:@"newarray" object:nil];
+    }*/
+
+    
 }
 
 

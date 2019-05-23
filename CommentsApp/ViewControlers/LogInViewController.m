@@ -172,6 +172,7 @@
         
         checkImage.image = [UIImage imageNamed: @"check_unactive"];
         
+        [emailTextField isFirstResponder];
     }
     
     NSUserDefaults *def= [NSUserDefaults standardUserDefaults];
