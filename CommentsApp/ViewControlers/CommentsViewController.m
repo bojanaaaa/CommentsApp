@@ -18,6 +18,7 @@
 #import "AlbumManager.h"
 #import "PostsManager.h"
 #import "TableViewCell.h"
+#import "EditPostViewController.h"
 
 @interface CommentsViewController ()
 
@@ -47,6 +48,7 @@
     navigationBar.nameLabel.text=@"COMMENTS";
     navigationBar.photoSwitch.hidden=YES;
     navigationBar.addPost.hidden=YES;
+    navigationBar.editPost.hidden=NO;
     noCommentsLabel.hidden=YES;
 
     
@@ -69,6 +71,13 @@
 
 - (void)backButtonDelegate:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)editPostDelegate:(id)sender{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditPostViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"EditPostViewController"];
+    cartController.post=post;
+    [self.navigationController pushViewController:cartController animated:YES];
+    
 }
 #pragma Mark tableView delegate methods
 

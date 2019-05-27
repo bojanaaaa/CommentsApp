@@ -14,6 +14,7 @@
                 <outlet property="addPost" destination="TRt-AZ-ruC" id="Vrq-qh-PcD"/>
                 <outlet property="beckButton" destination="yAq-ki-2DT" id="yBN-zM-Csx"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="V1k-FT-wV8"/>
+                <outlet property="editPost" destination="GQA-Iv-r43" id="Svr-xJ-Ihf"/>
                 <outlet property="logOutButton" destination="Or8-vW-Txw" id="tWd-8R-8zd"/>
                 <outlet property="nameLabel" destination="PoJ-5t-cle" id="Qyt-d9-GXv"/>
                 <outlet property="photoSwitch" destination="zHa-Rl-38S" id="QaV-MR-iYB"/>
@@ -60,10 +61,20 @@
                         <action selector="addPost:" destination="-1" eventType="touchUpInside" id="XsF-gW-GgW"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQA-Iv-r43">
+                    <rect key="frame" x="326.5" y="0.0" width="81.5" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Edit"/>
+                    <connections>
+                        <action selector="editPost:" destination="-1" eventType="touchUpInside" id="OHX-2W-BPr"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="GQA-Iv-r43" firstAttribute="centerY" secondItem="TRt-AZ-ruC" secondAttribute="centerY" id="15k-0o-5IR"/>
                 <constraint firstItem="TRt-AZ-ruC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="1Cn-hs-56K"/>
+                <constraint firstItem="GQA-Iv-r43" firstAttribute="centerX" secondItem="TRt-AZ-ruC" secondAttribute="centerX" id="2oe-Q2-y2q"/>
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="2uq-Hf-jcc"/>
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="height" secondItem="Or8-vW-Txw" secondAttribute="height" id="65T-hA-QG5"/>
                 <constraint firstItem="TRt-AZ-ruC" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:5" id="8Be-l4-YB4"/>
@@ -72,7 +83,9 @@
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qag-oE-O7o"/>
                 <constraint firstItem="zHa-Rl-38S" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="U6I-Oa-tzP"/>
                 <constraint firstItem="Or8-vW-Txw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dbR-al-mWl"/>
+                <constraint firstItem="GQA-Iv-r43" firstAttribute="width" secondItem="TRt-AZ-ruC" secondAttribute="width" id="e1U-Ym-JOT"/>
                 <constraint firstItem="yAq-ki-2DT" firstAttribute="leading" secondItem="Or8-vW-Txw" secondAttribute="leading" id="e6A-vX-Why"/>
+                <constraint firstItem="GQA-Iv-r43" firstAttribute="height" secondItem="TRt-AZ-ruC" secondAttribute="height" id="elz-mD-N0C"/>
                 <constraint firstItem="TRt-AZ-ruC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fgN-gH-eSm"/>
                 <constraint firstItem="PoJ-5t-cle" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="3:5" id="gLc-8Y-PGh"/>
                 <constraint firstItem="TRt-AZ-ruC" firstAttribute="leading" secondItem="PoJ-5t-cle" secondAttribute="trailing" id="j3h-Kr-oQa"/>

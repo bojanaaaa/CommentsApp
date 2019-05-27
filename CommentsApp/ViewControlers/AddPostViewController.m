@@ -28,7 +28,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopIndicator:) name:@"newarraypost" object:nil];
-    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(somethingWentWrong:) name:@"somethingwentwrong" object:nil];
     
     navigationBar.delegate=self;
     titleTextField.delegate=self;
@@ -141,6 +141,8 @@
     bodyTextView.hidden=YES;
     addPostButton.hidden=YES;
     bodyLabel.hidden=YES;
+    navigationBar.editPost.hidden=YES;
+
         
         BOOL chack=YES;
         NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
@@ -190,7 +192,29 @@
     [self presentViewController:alert animated:YES completion:nil];
     
 }
-
+-(void)somethingWentWrong:(NSNotification *)notification{
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Notification"
+                                 message:@"Post is not created!"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   
+                                   UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                   PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
+                                   [self.navigationController pushViewController:cartController animated:YES];
+                                   
+                               }];
+    
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 - (IBAction)addPostButton:(id)sender {
     
     [self addPostCall:newPost];

@@ -41,6 +41,8 @@
     navigationBar.nameLabel.text=@"POSTS";
     navigationBar.photoSwitch.hidden=YES;
     navigationBar.addPost.hidden=NO;
+    navigationBar.editPost.hidden=YES;
+
    // tableView.hidden=YES;
     postsArray=[PostsManager sharedManager].postsArray;
     

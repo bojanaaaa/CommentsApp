@@ -82,6 +82,14 @@
 
 }
 
+- (IBAction)editPost:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(editPostDelegate:)]) {
+        
+        [self.delegate editPostDelegate:self];
+    }
+
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

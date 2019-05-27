@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong,nonatomic) NSMutableArray *postsArray;
 -(void) initManager;
 -(void) addPost:(Post *) newPost;
-
+-(void) editPost:(Post *) post;
 
 @end
 
