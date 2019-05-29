@@ -8,6 +8,5 @@ target 'CommentsApp' do
   # Pods for CommentsApp
   pod'SGHTTPRequest'
   pod'AFNetworking'
-  
 
 end

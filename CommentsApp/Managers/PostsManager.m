@@ -10,6 +10,8 @@
 #import "AFNetworking.h"
 #import "Post.h"
 #import "SGHTTPRequest.h"
+#import "AFNetworking.h"
+
 @implementation PostsManager
 
 @synthesize postsArray;
@@ -37,7 +39,6 @@
 
 -(void)getData
 {
-    NSLog(@"posts: tu sam ");
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:@"https://jsonplaceholder.typicode.com/posts"
@@ -87,7 +88,8 @@
         NSLog(@"response:%@", _req.responseString);
 
          Post *a=[Post new];
-        a.userID=[_req.parameters objectForKey:@"userID"];
+        a.userID= @([[_req.parameters objectForKey:@"userID"] intValue]);
+       // a.userID=[_req.parameters objectForKey:@"userID"];
         a.postID=[_req.parameters objectForKey:@"id"];
         a.title=[_req.parameters objectForKey:@"title"];
         a.body=[_req.parameters objectForKey:@"body"];
@@ -109,29 +111,35 @@
     [req start];
 }
 - (void)editPost:(Post *)post{
-    
+   
     NSString *urlstr= [NSString stringWithFormat:@"https://jsonplaceholder.typicode.com/posts/%i", [post.postID intValue]];
-    
+    NSLog(@"tu");
     NSURL *url = [NSURL URLWithString:urlstr];
-    SGHTTPRequest *req = [SGHTTPRequest postRequestWithURL:url];
+    SGHTTPRequest *req = [SGHTTPRequest patchRequestWithURL:url];
+    NSLog(@"post: %@,%@,%i,%i",post.title,post.body,[post.userID intValue],[post.postID intValue]);
     req.parameters = @{@"id": post.postID,
                        @"userId": post.userID,
                        @"title": post.title,
                        @"body": post.body
                        };
-    
+    NSLog(@"tu");
+
     req.onSuccess = ^(SGHTTPRequest *_req) {
         NSLog(@"response:%@", _req.responseString);
         
         Post *a=[Post new];
+        //NSNumberFormatter *format=[NSNumberFormatter new];
+        //format.numberStyle=NSNumberFormatterDecimalStyle;
+        //a.userID= @([[_req.parameters objectForKey:@"userID"] intValue]);
         a.userID=[_req.parameters objectForKey:@"userID"];
         a.postID=[_req.parameters objectForKey:@"id"];
         a.title=[_req.parameters objectForKey:@"title"];
         a.body=[_req.parameters objectForKey:@"body"];
-        NSLog(@"%@",a.title);
         int i=[post.postID intValue]-1;
+        NSLog(@"%i",i);
         [self->postsArray replaceObjectAtIndex:i withObject:a];
-        
+        Post *p=self->postsArray[i];
+        NSLog(@"tijelo %@",p.body);
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"postedited" object:nil];
         
@@ -143,6 +151,34 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"somethingwentwrongwhileediting" object:nil];
         
+    };
+    
+    [req start];
+    
+    
+    
+}
+- (void) deletePost:(Post *)post{
+    NSString *urlstr= [NSString stringWithFormat:@"https://jsonplaceholder.typicode.com/posts/%i", [post.postID intValue]];
+    NSLog(@"tu");
+    NSURL *url = [NSURL URLWithString:urlstr];
+    SGHTTPRequest *req = [SGHTTPRequest deleteRequestWithURL:url];
+    
+    req.onSuccess = ^(SGHTTPRequest *_req) {
+        NSLog(@"response:%@", _req.responseString);
+        
+        [self->postsArray removeObject:post];
+        NSLog(@"%lu",(unsigned long)[self->postsArray count]);
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"postisdeleted" object:nil];
+        
+    };
+    
+    // optional failure handler
+    req.onFailure = ^(SGHTTPRequest *_req) {
+        NSLog(@"error:%@", _req.error);
+        NSLog(@"status code:%ld", (long)_req.statusCode);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"postisnotdeleted" object:nil];
     };
     
     [req start];

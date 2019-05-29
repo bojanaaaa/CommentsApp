@@ -31,7 +31,6 @@
 }
 
 -(void)initUserManager{
-    NSLog(@": tu sam ");
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     context = app.managedObjectContext;
     coordinator = app.persistentStoreCoordinator;

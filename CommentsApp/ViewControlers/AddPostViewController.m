@@ -89,6 +89,7 @@
     navigationBar.photoSwitch.hidden=YES;
     navigationBar.addPost.hidden=YES;
     activityIndicator.hidden=YES;
+    navigationBar.editPost.hidden=YES;
 }
 
 
@@ -115,7 +116,9 @@
     
     NSArray *postsArray=[PostsManager sharedManager].postsArray;
     newPost.postID=@([postsArray count]+1);
+    
     newPost.userID=@(1);
+    NSLog(@"postID %i userID %i", [newPost.postID intValue],[newPost.userID intValue]);
     if([titleTextField.text length]==0)
     {
         
@@ -127,7 +130,7 @@
         
         bodyLabel.hidden=NO;
     
-        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Body text is reqired!"]];
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"  Body text is reqired!"]];
         NSInteger i=[attrStr length];
         [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,i)];
         bodyLabel.attributedText = attrStr;
@@ -146,7 +149,7 @@
         
         BOOL chack=YES;
         NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-        [def setBool:chack forKey:@"writenewpost"];
+        [def setBool:chack forKey:@"reload"];
        /* NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
         [def setBool:chack forKey:@"writenewpost"];
         [def setObject:newPost.postID forKey:@"id"];
@@ -196,20 +199,24 @@
     
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Notification"
-                                 message:@"Post is not created!"
+                                 message:@"Post is not created, due to poor intenet conection!"
                                  preferredStyle:UIAlertControllerStyleAlert];
     
     //Add Buttons
+    self->activityIndicator.hidesWhenStopped=YES;
+    [self.activityIndicator stopAnimating];
     
     UIAlertAction* okButton = [UIAlertAction
                                actionWithTitle:@"OK"
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                    
-                                   UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                   PostsViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"PostsViewController"];
-                                   [self.navigationController pushViewController:cartController animated:YES];
+                                   self->titleTextField.hidden=NO;
                                    
+                                   self->bodyTextView.hidden=NO;
+                                   self->addPostButton.hidden=NO;
+                                   self->bodyLabel.hidden=YES;
+                                   self->navigationBar.editPost.hidden=YES;
                                }];
     
     [alert addAction:okButton];

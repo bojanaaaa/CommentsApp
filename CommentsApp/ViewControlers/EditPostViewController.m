@@ -54,16 +54,7 @@
      [self.navigationController popViewControllerAnimated:YES];
     
 }
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    // Prevent crashing undo bug – see note below.
-    if(range.length + range.location > titleTextField.text.length)
-    {
-        return NO;
-    }
-    
-    NSUInteger newLength = [titleTextField.text length] + [string length] - range.length;
-    return newLength <= 60;
-}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if(textField==titleTextField)
@@ -128,7 +119,9 @@
         
     }
     else {
-      
+        BOOL chack=YES;
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        [def setBool:chack forKey:@"reload"];
         activityIndicator.hidden=NO;
         titleTextField.hidden=YES;
         bodyTextView.hidden=YES;
@@ -173,7 +166,7 @@
     
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Notification"
-                                 message:@"Post is not edited!"
+                                 message:@"Post is not edited, due to poor intenet conection!"
                                  preferredStyle:UIAlertControllerStyleAlert];
     
     //Add Buttons
@@ -182,7 +175,14 @@
                                actionWithTitle:@"OK"
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
-                                   [self.navigationController popViewControllerAnimated:YES];
+                                   self->activityIndicator.hidesWhenStopped=YES;
+                                   [self.activityIndicator stopAnimating];
+                                   self->titleTextField.hidden=NO;
+                                   self->bodyTextView.hidden=NO;
+                                   self->editPostButton.hidden=NO;
+                                   self->bodyLabel.hidden=YES;
+                                   self->navigationBar.editPost.hidden=NO;
+                                  // [self.navigationController popViewControllerAnimated:YES];
                                }];
     
     [alert addAction:okButton];

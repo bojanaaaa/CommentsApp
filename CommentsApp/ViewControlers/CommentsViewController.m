@@ -26,14 +26,16 @@
 
 @implementation CommentsViewController
 
-@synthesize navigationBar,comment,commentsArray,post,tableView,titleLabel,bodyLabel,activityIndicatorView,myCurrentUser,noCommentsLabel;
+@synthesize navigationBar,comment,commentsArray,post,tableView,titleLabel,bodyLabel,activityIndicatorView,myCurrentUser,noCommentsLabel,activityIndicator;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postIsDeleted:) name:@"postisdeleted" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postIsNotDeleted:) name:@"postisnotdeleted" object:nil];
     navigationBar.delegate=self;
     
-    titleLabel.text=post.title;
-    bodyLabel.text=post.body;
+    
      // Do any additional setup after loading the view.
     
     tableView.delegate=self;
@@ -45,12 +47,14 @@
     
     navigationBar.beckButton.hidden=NO;
     navigationBar.logOutButton.hidden=YES;
-    navigationBar.nameLabel.text=@"COMMENTS";
+    navigationBar.nameLabel.text=@"POST";
     navigationBar.photoSwitch.hidden=YES;
     navigationBar.addPost.hidden=YES;
     navigationBar.editPost.hidden=NO;
     noCommentsLabel.hidden=YES;
-
+    activityIndicator.hidden=YES;
+    titleLabel.text=post.title;
+    bodyLabel.text=post.body;
     
     [self.activityIndicatorView startAnimating];
     [[CommentsManager sharedManager]formCommentsArray:post.postID];
@@ -77,6 +81,102 @@
     EditPostViewController *cartController = [sb instantiateViewControllerWithIdentifier:@"EditPostViewController"];
     cartController.post=post;
     [self.navigationController pushViewController:cartController animated:YES];
+    
+}
+-(void)deletePost{
+    
+    tableView.hidden=YES;
+    titleLabel.hidden=YES;
+    bodyLabel.hidden=YES;
+    activityIndicator.hidden=NO;
+    [self.activityIndicator startAnimating];
+    [[PostsManager sharedManager]deletePost:post];
+}
+-(void)postIsDeleted:(NSNotification *)notification{
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Notification"
+                                 message:@"Post Is Deleted!"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   
+                                   BOOL chack=YES;
+                                   NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+                                   [def setBool:chack forKey:@"reload"];
+                                   self->activityIndicator.hidden=YES;
+                                   [self.activityIndicator stopAnimating];
+                                 [self.navigationController popViewControllerAnimated:YES];
+                                   
+                               }];
+    
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)postIsNotDeleted:(NSNotification *)notification{
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Notification"
+                                 message:@"Post Is Not Deleted!"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   
+                                   
+                                   self->tableView.hidden=NO;
+                                   self->titleLabel.hidden=NO;
+                                   self->bodyLabel.hidden=NO;
+                                   self->activityIndicator.hidden=YES;
+                                   [self.activityIndicator stopAnimating];
+
+                                   
+                               }];
+    
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+- (IBAction)deletePostButton:(id)sender {
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Logout"
+                                 message:@"Are You Sure Want to Delete Post!"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    
+                                    [self deletePost];
+                                    
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"No"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   
+                               }];
+    
+    
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 #pragma Mark tableView delegate methods

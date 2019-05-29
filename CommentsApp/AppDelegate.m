@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LogInViewController.h"
 #import <CoreData/CoreData.h>
-
+#import "SGHTTPRequest.h"
 @interface AppDelegate ()
 
 @end
@@ -22,7 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
+    [SGHTTPRequest setAllowCacheToDisk:YES];  // allow responses cached by ETag to persist between app sessions
+    [SGHTTPRequest setMaxDiskCacheSize:30];
     return YES;
 }
 

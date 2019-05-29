@@ -60,7 +60,10 @@
     
     // Do any additional setup after loading the view.
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [emailTextField becomeFirstResponder];
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -70,14 +73,14 @@
 }
 
 - (IBAction)emailEditingDidBegin:(id)sender {
-    emailTextField.placeholder=nil;
+    //emailTextField.placeholder=nil;
     emailTextField.text=temp;
 }
 - (IBAction)passwordEditingDidBegin:(id)sender {
-    passwordTextField.placeholder=nil;
+   // passwordTextField.placeholder=nil;
 }
 - (IBAction)confirmationEditingDidBegin:(id)sender {
-    confirmedPasswordTextField.placeholder=nil;
+    //confirmedPasswordTextField.placeholder=nil;
 }
 - (IBAction)emailEditingDidEnd:(id)sender {
     emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"E-mail" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
@@ -160,9 +163,14 @@
         [self.navigationController pushViewController:cartController animated:YES];
     }
     else {
-        
+        passwordTextField.text=@"";
         confirmedPasswordTextField.text=@"";
-        confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Not matching!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Passwords are not equal!"]];
+        NSInteger i=[attrStr length];
+        [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,i)];
+        somethingWentWrongLabel.attributedText = attrStr;
+
+        //confirmedPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Not matching!" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
         
         //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(next:) name:@"finished" object:nil];
     }
@@ -204,7 +212,7 @@
     
     if (keyboardFrameEnd.size.height > 0) {
         scrollViewBottom.constant = keyboardFrameEnd.size.height + 20;
-        [scrollView setContentOffset:CGPointMake(0, emailTextField.frame.origin.y)];
+       // [scrollView setContentOffset:CGPointMake(0, emailTextField.frame.origin.y)];
         
     }
     

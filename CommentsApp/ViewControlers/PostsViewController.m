@@ -48,13 +48,13 @@
     
     BOOL chack=NO;
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    chack=[def boolForKey:@"writenewpost"];
+    chack=[def boolForKey:@"reload"];
     
     if(chack==YES)
     {
         if([postsArray count])
         {
-            [def setBool:NO forKey:@"writenewpost"];
+            [def setBool:NO forKey:@"reload"];
             postsArray=[PostsManager sharedManager].postsArray;
             //tableView.hidden=NO;
             [tableView reloadData];}

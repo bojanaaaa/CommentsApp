@@ -34,7 +34,6 @@
 
 -(void)getData
 {
-    NSLog(@"comments: tu sam ");
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:@"https://jsonplaceholder.typicode.com/comments"

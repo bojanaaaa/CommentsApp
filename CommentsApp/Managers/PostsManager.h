@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) initManager;
 -(void) addPost:(Post *) newPost;
 -(void) editPost:(Post *) post;
+-(void) deletePost:(Post *) post;
 
 @end
 

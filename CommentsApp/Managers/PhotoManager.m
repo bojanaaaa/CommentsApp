@@ -36,7 +36,6 @@
 
 -(void)getData
 {
-    NSLog(@"photo: tu sam ");
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:@"https://jsonplaceholder.typicode.com/photos"
       parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {

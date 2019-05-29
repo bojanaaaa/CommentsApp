@@ -94,6 +94,7 @@
     }
     else {
         
+        [emailTextField becomeFirstResponder];
         rememberMeLabel.textColor=[UIColor grayColor];
         checkImage.image = [UIImage imageNamed: @"check_unactive"];
     }
@@ -110,7 +111,7 @@
 */
 - (IBAction)textFieldDidStartEditing:(id)sender {
     
-    emailTextField.placeholder=nil;
+    //emailTextField.placeholder=nil;
 }
 - (IBAction)emailEditingDidEnd:(id)sender {
     
@@ -118,7 +119,7 @@
 }
 - (IBAction)passwordTextFieldDidStartEditing:(id)sender {
     
-    passwordTextField.placeholder=nil;
+    //passwordTextField.placeholder=nil;
 }
 - (IBAction)passwordEditingEnd:(id)sender {
     passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
@@ -172,7 +173,6 @@
         
         checkImage.image = [UIImage imageNamed: @"check_unactive"];
         
-        [emailTextField isFirstResponder];
     }
     
     NSUserDefaults *def= [NSUserDefaults standardUserDefaults];
