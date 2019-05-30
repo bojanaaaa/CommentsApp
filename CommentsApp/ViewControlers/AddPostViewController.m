@@ -196,7 +196,7 @@
     
 }
 -(void)somethingWentWrong:(NSNotification *)notification{
-    
+       
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Notification"
                                  message:@"Post is not created, due to poor intenet conection!"
@@ -224,6 +224,8 @@
 }
 - (IBAction)addPostButton:(id)sender {
     
+    [bodyTextView resignFirstResponder];
+    [titleTextField resignFirstResponder];
     [self addPostCall:newPost];
     
 }

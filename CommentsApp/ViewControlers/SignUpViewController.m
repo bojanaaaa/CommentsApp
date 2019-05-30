@@ -181,6 +181,9 @@
 
 - (IBAction)signUpButton:(id)sender {
     
+    [passwordTextField resignFirstResponder];
+    [emailTextField resignFirstResponder];
+    [confirmedPasswordTextField resignFirstResponder];
     [self signUp];
 }
 

@@ -14,10 +14,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostsViewController : MainViewController
-<UITableViewDelegate,UITableViewDataSource,NavigationBarDelegate>
+<UITableViewDelegate,UITableViewDataSource,NavigationBarDelegate,UISearchBarDelegate>
 
 
+@property (strong, nonatomic) IBOutlet UILabel *noPosts;
 
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -28,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong, nonatomic) NSMutableArray *postsArray;
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tableViewBottom;
 
 
 @end

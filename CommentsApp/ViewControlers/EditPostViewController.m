@@ -94,6 +94,8 @@
 
 - (IBAction)editButton:(id)sender {
     
+    [bodyTextView resignFirstResponder];
+    [titleTextField resignFirstResponder];
     [self editPostCall:post];
     
 }

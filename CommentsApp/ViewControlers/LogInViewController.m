@@ -183,6 +183,9 @@
 
 - (IBAction)logInButton:(id)sender {
    
+    [emailTextField resignFirstResponder];
+    [passwordTextField resignFirstResponder];
+    
     [self logIn];
     
 }
